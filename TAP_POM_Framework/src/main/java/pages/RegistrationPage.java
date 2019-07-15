@@ -34,7 +34,13 @@ public class RegistrationPage extends TapWrappers{
 	    	enterById(companyWebsite, data);
 		return this;
 	}
-	
+
+	public RegistrationPage enterSocialSite(String data){
+	    	String socialSite = prop.getProperty("Registration.SocialSite.Id");	    
+	    	enterById(socialSite, data);
+		return this;
+	}
+
 	public RegistrationPage enterFirstName(String data){
 	    	String firstName = prop.getProperty("Registration.FirstName.Name");	    
 	    	enterByName(firstName, data);

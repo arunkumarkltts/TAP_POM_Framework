@@ -15,15 +15,33 @@ public class NewApplicationPage extends TapWrappers{
 		verifyTextById(pageVerification, "New Application");		
 	}
 	
-	public LoginPage enterEmail(String data){
-	    	String email = prop.getProperty("Login.Email.Xpath");
-		enterByXpath(email, data);
+	public NewApplicationPage enterTitle(String data){
+	    	String title = prop.getProperty("NewApplication.Title.Xpath");
+		enterByXpath(title, data);
 		return this;
 	}
 	
-	public LoginPage enterPassword(String data){
-	    	String password = prop.getProperty("Login.Password.Xpath");
-	    	enterByXpath(password, data);
+	public NewApplicationPage selectSystem(String data){
+	    	String systemDropDown = prop.getProperty("NewApplication.SystemDropDown.Xpath");
+	    	selectVisibileTextByXPath(systemDropDown, data);
+		return this;
+	}
+	
+	public NewApplicationPage selectInput(String data){
+	    	String inputDropDown = prop.getProperty("NewApplication.InputDropDown.Xpath");
+	    	selectVisibileTextByXPath(inputDropDown, data);
+		return this;
+	}
+	
+	public NewApplicationPage enterPackageName(String data){
+	    	String packageName = prop.getProperty("NewApplication.PackageName.Xpath");
+	    	selectVisibileTextByXPath(packageName, data);
+		return this;
+	}
+	
+	public NewApplicationPage enterPassword(String data){
+	    	String systemDropDown = prop.getProperty("NewApplication.SystemDropDown.Xpath");
+	    	selectVisibileTextByXPath(systemDropDown, data);
 		return this;
 	}
 	
@@ -33,10 +51,4 @@ public class NewApplicationPage extends TapWrappers{
 		return new HomePage(driver, test);
 	}
 	
-	public ForgotPasswordPage clickForgotPassword(){
-	    	String forgotPassword = prop.getProperty("Login.ForgotPassword.LinkText");
-		clickByLinkText(forgotPassword);
-		return new ForgotPasswordPage(driver, test);
-	}
-
 }
