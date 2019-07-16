@@ -22,8 +22,7 @@ public class TC001_Login extends TapWrappers {
 	}
 	
 	@Test(dataProvider = "fetchData"/*, invocationCount = 1, threadPoolSize=1*/)
-	public void loginLogOut(String testNumber, String uName, String pwd){
-		//setTestNumber(Integer.parseInt(testNumber));
+	public void loginLogOut(String uName, String pwd){
 		new OpeningPage(driver, test)
 		.clickLogin()
 		.enterEmail(uName)

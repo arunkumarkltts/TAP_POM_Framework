@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.lang.reflect.Method;
 
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -27,12 +28,12 @@ public class DataInputProvider{
 
 			// get the number of rows
 			int rowCount = sheet.getLastRowNum();
-			// reduce rowcount by 1 for ignoring heading
-			rowCount -= 1;
+
 			// get the number of columns
 			int columnCount = sheet.getRow(0).getLastCellNum();
 			data = new String[rowCount][columnCount];
-
+			System.out.println("Rowcount = "+rowCount+"\n");
+			System.out.println("Columncount = "+columnCount+"\n");
 
 			// loop through the rows
 			for(int i=1; i <=rowCount; i++){
@@ -43,6 +44,7 @@ public class DataInputProvider{
 							String cellValue = "";
 							try{
 								if (row.getCell(j) != null) {
+								    	row.getCell(j).setCellType(CellType.STRING);
 									cellValue = row.getCell(j).getStringCellValue();
 								}
 							}catch(NullPointerException e){

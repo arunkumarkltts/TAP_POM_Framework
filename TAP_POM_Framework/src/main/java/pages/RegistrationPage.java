@@ -17,15 +17,32 @@ public class RegistrationPage extends TapWrappers{
 		verifyTextContainsByXpath(pageVerification, user);
 	}
 	
+	public RegistrationPage(RemoteWebDriver driver, ExtentTest test){
+		this.driver = driver;
+		this.test = test;
+	}
+	
 	public RegistrationPage enterCompanyName(String data){
 	    	String companyName = prop.getProperty("Registration.CompanyName.Id");	    
 	    	enterById(companyName, data);
 		return this;
 	}
 	
+	public RegistrationPage enterDeveloperCompanyName(String data){
+	    	String devCompanyName = prop.getProperty("Registration.DeveloperCompany.Id");	    
+	    	enterById(devCompanyName, data);
+		return this;
+	}
+
 	public RegistrationPage enterCompanyPhone(String data){
 	    	String companyPhone = prop.getProperty("Registration.CompanyPhone.Id");	    
 	    	enterById(companyPhone, data);
+		return this;
+	}
+
+	public RegistrationPage enterPhone(String data){
+	    	String phone = prop.getProperty("Registration.Phone.Name");	    
+	    	enterByName(phone, data);
 		return this;
 	}
 
@@ -65,6 +82,12 @@ public class RegistrationPage extends TapWrappers{
 		return this;
 	}
 	
+	public RegistrationPage reEnterDeveloperEmail(String data){
+	    	String email = prop.getProperty("Registration.DeveloperReEnterEmail.Name");	    
+	    	enterByName(email, data);
+		return this;
+	}
+
 	public RegistrationPage enterPassword(String data){
 	    	String password = prop.getProperty("Registration.Password.Id");	    
 	    	enterById(password, data);
@@ -80,6 +103,16 @@ public class RegistrationPage extends TapWrappers{
 	public RegistrationPage clickSubmitRegistrationForm(){
 	    	String submit = prop.getProperty("Registration.SubmitButton.Xpath");
 		clickByXpath(submit);
+		return this;
+	}
+
+	public RegistrationPage clickContinue(){
+	    	acceptAlert();
+		return this;
+	}
+
+	public RegistrationPage clickCancel(){
+	    	dismissAlert();
 		return this;
 	}
 
