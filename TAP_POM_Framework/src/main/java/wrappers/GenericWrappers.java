@@ -1,5 +1,10 @@
 package wrappers;
 
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
@@ -25,7 +31,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import com.relevantcodes.extentreports.ExtentTest;
-
 import utils.Reporter;
 
 public class GenericWrappers extends Reporter implements Wrappers {
@@ -474,7 +479,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 
 	/**
 	 * This method will return the text of the element using id as locator
-	 * @param xpathVal  The id (locator) of the element
+	 * @param idVal  The id (locator) of the element
 	 * @author Arunkumar K
 	 */
 	public String getTextById(String idVal) {
@@ -502,8 +507,6 @@ public class GenericWrappers extends Reporter implements Wrappers {
 			reportStep("The value: "+value+" could not be selected.", "FAIL");
 		}
 	}
-
-
 
 	public void selectVisibileTextByXPath(String xpath, String value) {
 		try{
@@ -580,6 +583,44 @@ public class GenericWrappers extends Reporter implements Wrappers {
 			reportStep("The alert could not be accepted.", "FAIL");
 		}
 
+	}
+
+	/**
+	 * This method will send the given key combination to the element using Xpath as locator
+	 * @param keyValue The value to be sent to the element 
+	 * @author Arunkumar K
+	 */
+	public void sendKeys(Keys keyValue) {
+		try{
+		    	Actions action = new Actions(driver);
+		    	action.sendKeys(keyValue).build().perform();
+			reportStep("The key combination: "+keyValue+" is sent.", "PASS");
+		} catch (Exception e) {
+			reportStep("The key combination: "+keyValue+" could not be sent.", "FAIL");
+		}
+	}
+
+	/**
+	 * This method will send the given String to Window Forms
+	 * @param value The value to be sent to the element 
+	 * @author Arunkumar K
+	 */
+	public void sendKeysToWindows(String value) {
+		try{
+		    	Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+		    	StringSelection stringSelection = new StringSelection( value );
+		    	clipboard.setContents(stringSelection, stringSelection);
+		    	Robot robot = new Robot();
+		    	robot.keyPress(KeyEvent.VK_CONTROL);
+		        robot.keyPress(KeyEvent.VK_V);
+		        robot.keyRelease(KeyEvent.VK_V);
+		        robot.keyRelease(KeyEvent.VK_CONTROL);
+		        robot.keyPress(KeyEvent.VK_ENTER);
+		        robot.keyRelease(KeyEvent.VK_ENTER);
+			reportStep("The string: "+value+" is sent.", "PASS");
+		} catch (Exception e) {
+			reportStep("The string: "+value+" could not be sent.", "FAIL");
+		}
 	}
 
 	public long takeSnap(){

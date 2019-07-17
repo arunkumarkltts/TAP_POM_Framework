@@ -3,7 +3,7 @@
 <suite name="Suite" verbose="5">
   <test name="Test">
     <classes>
-      <class name="testCases.TC004_RegistrationDeveloper" />
+      <class name="testCases.TC004_NewDeveloperRegistration" />
       <!-- <class name="testCases.TC001_Login"/> -->
     </classes>
   </test> <!-- Test -->
