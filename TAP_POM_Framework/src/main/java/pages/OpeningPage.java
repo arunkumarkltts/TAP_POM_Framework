@@ -30,31 +30,21 @@ public class OpeningPage extends TapWrappers{
 		return this;
 	}
 	
-	public RegistrationPage clickRegisterUser(String user){
-		clickByLinkText(user);
-		return new RegistrationPage(driver, test, user);
+	public AirlineRegistrationPage clickRegisterAirline(){
+	    	String airline = prop.getProperty("Opening.Airline.LinkText");
+		clickByLinkText(airline);
+		return new AirlineRegistrationPage(driver, test);
 	}
 	
+	public DeveloperRegistrationPage clickRegisterDeveloper(){
+	    	String developer = prop.getProperty("Opening.Developer.LinkText");
+		clickByLinkText(developer);
+		return new DeveloperRegistrationPage(driver, test);
+	}
+
 	public OpeningPage clickRegisterForFailure(){
 		clickByClassName("decorativeSubmit");
 		return this;
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

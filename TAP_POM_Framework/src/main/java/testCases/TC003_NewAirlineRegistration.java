@@ -21,11 +21,11 @@ public class TC003_NewAirlineRegistration extends TapWrappers {
 		authors = "Arunkumar K";		
 	}
 	
-	@Test(dataProvider = "fetchData")
+	@Test(dataProvider = "fetchData", groups = {"Registration"})
 	public void loginLogOut(String cName, String cPhone, String cWeb, String firstName, String lastName, String email, String password){
 		new OpeningPage(driver, test)
 		.clickRegister()
-		.clickRegisterUser("Airline")
+		.clickRegisterAirline()
 		.enterCompanyName(cName)
 		.enterCompanyPhone(cPhone)
 		.enterCompanyWebsite(cWeb)

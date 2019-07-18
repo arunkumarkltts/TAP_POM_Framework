@@ -2,20 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" verbose="5" name="Failed suite [Suite]">
   <test thread-count="5" verbose="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="Registration"/>
+      </run>
+    </groups>
     <classes>
-      <class name="testCases.TC004_RegistrationDeveloper">
+      <class name="testCases.TC004_NewDeveloperRegistration">
         <methods>
-          <include name="beforeTest"/>
-          <include name="afterMethod"/>
-          <include name="afterSuite"/>
-          <include name="afterTest"/>
-          <include name="afterClass"/>
-          <include name="beforeSuite"/>
-          <include name="developerRegistration" invocation-numbers="0"/>
-          <include name="beforeMethod"/>
-          <include name="setValues"/>
+          <include name="developerRegistration"/>
         </methods>
-      </class> <!-- testCases.TC004_RegistrationDeveloper -->
+      </class> <!-- testCases.TC004_NewDeveloperRegistration -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

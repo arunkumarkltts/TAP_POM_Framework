@@ -21,6 +21,12 @@ public class ForgotPasswordPage extends TapWrappers{
 		return this;
 	}
 
+	public ForgotPasswordPage verifyInvalidEmailError(String data){
+	    	String invalidEmailError = prop.getProperty("ForgotPassword.InvalidEmailError.Xpath");
+		enterByXpath(invalidEmailError, "This email address is not registered in our system.");
+		return this;
+	}
+
 	public ForgotPasswordPage clickRequestPassword(){
 	    	String requestPassword = prop.getProperty("ForgotPassword.RequestPasswordButton.Xpath");
 	    	String requestPasswordVerification = prop.getProperty("ForgotPassword.RequestPasswordVerification.Xpath");

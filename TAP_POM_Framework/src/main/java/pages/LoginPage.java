@@ -27,6 +27,12 @@ public class LoginPage extends TapWrappers{
 		return this;
 	}
 	
+	public LoginPage verifyInvalidCredentialError(){
+	    	String credentialError = prop.getProperty("Login.CredentialError.Xpath");
+	    	verifyTextContainsByXpath(credentialError, "Invalid username or password.");
+		return this;
+	}
+
 	public HomePage clickLogin(){
 	    	String loginButton = prop.getProperty("Login.LoginButton.Xpath");
 		clickByXpath(loginButton);

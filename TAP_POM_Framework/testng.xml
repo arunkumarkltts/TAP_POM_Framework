@@ -2,9 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" verbose="5">
   <test name="Test">
-    <classes>
-      <class name="testCases.TC004_NewDeveloperRegistration" />
-      <!-- <class name="testCases.TC001_Login"/> -->
-    </classes>
+	<groups>		
+	 <run>		
+	  <include name="Registration" />		
+	 </run>		
+	</groups>
+	<classes>
+	  <class name="testCases.TC001_Login"/>
+	  <class name="testCases.TC004_NewDeveloperRegistration" />
+	</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

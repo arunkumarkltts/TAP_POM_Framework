@@ -67,7 +67,7 @@ public class AddNewApplicationPage extends TapWrappers{
 		return this;
 	}
 	
-	public AddNewApplicationPage selectCatergory(String data){
+	public AddNewApplicationPage selectCategory(String data){
 	    	String category = prop.getProperty("AddNewApplication.CategoryDropDown.Xpath");
 	    	selectVisibileTextByXPath(category, data);
 		return this;
@@ -79,6 +79,12 @@ public class AddNewApplicationPage extends TapWrappers{
 		return this;
 	}
 	
+	public AddNewApplicationPage selectPlayers(String data){
+	    	String players = prop.getProperty("AddNewApplication.PlayerDropDown.Xpath");
+	    	selectVisibileTextByXPath(players, data);
+		return this;
+	}
+
 	public AddNewApplicationPage selectHTML5SupportedAppYes(){
 	    	String html5Yes = prop.getProperty("AddNewApplication.Html5YesRadioButton.Xpath");
 	    	clickByXpath(html5Yes);

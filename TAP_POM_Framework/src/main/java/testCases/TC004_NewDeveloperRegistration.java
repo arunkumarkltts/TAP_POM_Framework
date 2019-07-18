@@ -21,7 +21,7 @@ public class TC004_NewDeveloperRegistration extends TapWrappers {
 		authors = "Arunkumar K";		
 	}
 	
-	@Test(dataProvider = "fetchData")
+	@Test(dataProvider = "fetchData", groups = {"Registration"})
 	public void developerRegistration(String firstName, String lastName, String companyDeveloper, 
 		String companyWebsite, String phone, String socialSite, String email, String password,
 		String address1, String address2, String city, String state, String postalCode,
@@ -29,7 +29,7 @@ public class TC004_NewDeveloperRegistration extends TapWrappers {
 		String bankName, String accountNumber, String routingNumber){
 		new OpeningPage(driver, test)
 		.clickRegister()
-		.clickRegisterUser("Developer")
+		.clickRegisterDeveloper()
 		.enterFirstName(firstName)
 		.enterLastName(lastName)
 		.enterDeveloperCompanyName(companyDeveloper)
@@ -37,7 +37,7 @@ public class TC004_NewDeveloperRegistration extends TapWrappers {
 		.enterPhone(phone)
 		.enterSocialSite(socialSite)
 		.enterEmail(email)
-		.reEnterDeveloperEmail(email)
+		.reEnterEmail(email)
 		.enterPassword(password)
 		.reEnterPassword(password)
 		.clickSubmitRegistrationForm()
