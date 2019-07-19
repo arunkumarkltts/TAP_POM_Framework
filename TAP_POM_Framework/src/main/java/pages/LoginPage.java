@@ -33,12 +33,36 @@ public class LoginPage extends TapWrappers{
 		return this;
 	}
 
-	public HomePage clickLogin(){
+	public HomePage clickLoginSuperUser(){
 	    	String loginButton = prop.getProperty("Login.LoginButton.Xpath");
 		clickByXpath(loginButton);
 		return new HomePage(driver, test);
 	}
-	
+
+	public HomePage clickLoginAppAdminUser(){
+	    	String loginButton = prop.getProperty("Login.LoginButton.Xpath");
+		clickByXpath(loginButton);
+		return new HomePage(driver, test);
+	}
+
+	public MediaManagerPage clickLoginMediaManagerUser(){
+	    	String loginButton = prop.getProperty("Login.LoginButton.Xpath");
+		clickByXpath(loginButton);
+		return new MediaManagerPage(driver, test);
+	}
+
+	public MediaManagerApplicationsPage clickLoginAirlineUser(){
+	    	String loginButton = prop.getProperty("Login.LoginButton.Xpath");
+		clickByXpath(loginButton);
+		return new MediaManagerApplicationsPage(driver, test);
+	}
+
+	public DeveloperHomePage clickLoginDeveloperUser(){
+	    	String loginButton = prop.getProperty("Login.LoginButton.Xpath");
+		clickByXpath(loginButton);
+		return new DeveloperHomePage(driver, test);
+	}
+
 	public ForgotPasswordPage clickForgotPassword(){
 	    	String forgotPassword = prop.getProperty("Login.ForgotPassword.LinkText");
 		clickByLinkText(forgotPassword);

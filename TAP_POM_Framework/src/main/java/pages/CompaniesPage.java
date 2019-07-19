@@ -16,4 +16,10 @@ public class CompaniesPage extends TapWrappers{
 
 	}
 
+	public OpeningPage clickLogOff(){
+	    	String logOff = prop.getProperty("Companies.LogOff.LinkText");
+		clickByLinkText(logOff);
+		return new OpeningPage(driver, test);		
+	}
+
 }

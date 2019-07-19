@@ -25,7 +25,7 @@ public class TC002_LoginNegative extends TapWrappers {
 		.clickLogin()
 		.enterEmail(uName)
 		.enterPassword(pwd)
-		.clickLogin()
+		.clickLoginSuperUser()
 		.clickLogOff();		
 	}
 

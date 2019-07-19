@@ -16,4 +16,10 @@ public class UsersPage extends TapWrappers{
 
 	}
 
+	public OpeningPage clickLogOff(){
+	    	String logOff = prop.getProperty("Users.LogOff.LinkText");
+		clickByLinkText(logOff);
+		return new OpeningPage(driver, test);		
+	}
+
 }

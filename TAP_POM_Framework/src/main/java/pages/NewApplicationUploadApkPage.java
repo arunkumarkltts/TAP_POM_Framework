@@ -47,4 +47,10 @@ public class NewApplicationUploadApkPage extends TapWrappers{
 		return new NewApplicationPage(driver, test);
 	}
 
+	public OpeningPage clickLogOff(){
+	    	String logOff = prop.getProperty("NewApplicationUploadApk.LogOff.LinkText");
+		clickByLinkText(logOff);
+		return new OpeningPage(driver, test);		
+	}
+
 }

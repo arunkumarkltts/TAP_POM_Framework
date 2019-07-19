@@ -66,7 +66,7 @@ public class AddNewApplicationPage extends TapWrappers{
 	    	selectVisibileTextByXPath(activityName, data);
 		return this;
 	}
-	
+
 	public AddNewApplicationPage selectCategory(String data){
 	    	String category = prop.getProperty("AddNewApplication.CategoryDropDown.Xpath");
 	    	selectVisibileTextByXPath(category, data);
@@ -295,6 +295,12 @@ public class AddNewApplicationPage extends TapWrappers{
 	    	String addNewApplicationButton = prop.getProperty("AddNewApplication.AddNewApplicationButton.Xpath");
 	    	clickByXpath(addNewApplicationButton);
 		return new NewApplicationPage(driver, test, title);
+	}
+
+	public OpeningPage clickLogOff(){
+	    	String logOff = prop.getProperty("AddNewApplication.LogOff.LinkText");
+		clickByLinkText(logOff);
+		return new OpeningPage(driver, test);		
 	}
 
 }

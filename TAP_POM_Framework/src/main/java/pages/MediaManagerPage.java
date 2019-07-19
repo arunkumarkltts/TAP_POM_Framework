@@ -16,4 +16,26 @@ public class MediaManagerPage extends TapWrappers{
 
 	}
 
+	public OpeningPage clickLogOff(){
+	    	String logOff = prop.getProperty("MediaManager.LogOff.LinkText");
+		clickByLinkText(logOff);
+		return new OpeningPage(driver, test);		
+	}
+
+	/*TODO: Need to check the requirements and update the page/class of this method*/
+	public MediaManagerOrdersPage clickOrderNumber(String row, String column){
+		clickByXpath("//table[@id='orders']/tbody/tr["+row+"]/td["+column+"]");
+		return new MediaManagerOrdersPage(driver, test);		
+	}
+
+	public MediaManagerOrdersPage clickAirline(String row, String column){
+		clickByXpath("//table[@id='orders']/tbody/tr["+row+"]/td["+column+"]/a[1]");
+		return new MediaManagerOrdersPage(driver, test);		
+	}
+
+	public MediaManagerApplicationsPage clickAirlineDashboard(String row, String column){
+		clickByXpath("//table[@id='orders']/tbody/tr["+row+"]/td["+column+"]/a[2]");
+		return new MediaManagerApplicationsPage(driver, test);		
+	}
+
 }

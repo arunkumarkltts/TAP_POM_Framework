@@ -26,4 +26,10 @@ public class NewApplicationAddIconsPage extends TapWrappers{
 		return new NewApplicationPage(driver, test);
 	}
 
+	public OpeningPage clickLogOff(){
+	    	String logOff = prop.getProperty("NewApplicationAddIcons.LogOff.LinkText");
+		clickByLinkText(logOff);
+		return new OpeningPage(driver, test);		
+	}
+
 }

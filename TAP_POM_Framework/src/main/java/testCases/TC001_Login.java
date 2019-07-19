@@ -27,7 +27,7 @@ public class TC001_Login extends TapWrappers {
 		.clickLogin()
 		.enterEmail(uName)
 		.enterPassword(pwd)
-		.clickLogin()
+		.clickLoginSuperUser()
 		.clickLogOff();		
 	}
 

@@ -76,6 +76,72 @@ public class HomePage extends TapWrappers{
 		return this;		
 	}
 
+	public HomePage selectAvailableColumns(String data){
+	    	String availableColumns = prop.getProperty("Home.AvailableColumnsDropDown.Xpath");
+	    	selectVisibileTextByXPath(availableColumns, data);
+		return this;
+	}
+
+	public HomePage selectFilterColumns(String data){
+	    	String filterColumns = prop.getProperty("Home.FilterColumnsDropDown.Xpath");
+	    	selectVisibileTextByXPath(filterColumns, data);
+		return this;
+	}
+
+	public HomePage clickMoveAllRightButton(){
+	    	String moveRightAll = prop.getProperty("Home.MoveAllRightButton.Xpath");
+		clickByXpath(moveRightAll);
+		return this;		
+	}
+
+	public HomePage clickMoveRightButton(){
+	    	String moveRight = prop.getProperty("Home.MoveRightButton.Xpath");
+		clickByXpath(moveRight);
+		return this;		
+	}
+
+	public HomePage clickMoveLeftButton(){
+	    	String moveLeft = prop.getProperty("Home.MoveLeftButton.Xpath");
+		clickByXpath(moveLeft);
+		return this;		
+	}
+
+	public HomePage clickMoveAllLeftButton(){
+	    	String moveLeftAll = prop.getProperty("Home.MoveAllLeftButton.Xpath");
+		clickByXpath(moveLeftAll);
+		return this;		
+	}
+
+	public HomePage clickUpButton(){
+	    	String moveUp = prop.getProperty("Home.MoveUpButton.Xpath");
+		clickByXpath(moveUp);
+		return this;		
+	}
+
+	public HomePage clickDownButton(){
+	    	String moveDown = prop.getProperty("Home.MoveDownButton.Xpath");
+		clickByXpath(moveDown);
+		return this;		
+	}
+
+	public HomePage clickUpdateButton(){
+	    	String update = prop.getProperty("Home.UpdateFilterButton.Xpath");
+		clickByXpath(update);
+		return this;		
+	}
+
+	public HomePage clickCancelButton(){
+	    	String cancel = prop.getProperty("Home.CancelFilterButton.Xpath");
+		clickByXpath(cancel);
+		return this;		
+	}
+
+	public HomePage clickClearButton(){
+	    	String clear = prop.getProperty("Home.ClearFilterButton.Xpath");
+		clickByXpath(clear);
+		return this;		
+	}
+
 	public HomePage clickDownloadActiveApplications(){
 	    	String downloadActiveApps = prop.getProperty("Home.DownloadActiveApplications.LinkText");
 		clickByLinkText(downloadActiveApps);
@@ -119,9 +185,9 @@ public class HomePage extends TapWrappers{
 	}
 
 	public OpeningPage clickLogOff(){
-		clickByLinkText("Log Off");
+	    	String logOff = prop.getProperty("Home.LogOff.LinkText");
+		clickByLinkText(logOff);
 		return new OpeningPage(driver, test);		
-	
 	}
 
 }

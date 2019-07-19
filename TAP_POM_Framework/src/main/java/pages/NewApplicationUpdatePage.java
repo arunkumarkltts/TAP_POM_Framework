@@ -199,4 +199,10 @@ public class NewApplicationUpdatePage extends TapWrappers{
 		return new NewApplicationPage(driver, test);
 	}
 
+	public OpeningPage clickLogOff(){
+	    	String logOff = prop.getProperty("NewApplicationUpdate.LogOff.LinkText");
+		clickByLinkText(logOff);
+		return new OpeningPage(driver, test);		
+	}
+
 }

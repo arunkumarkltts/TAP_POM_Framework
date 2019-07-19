@@ -15,4 +15,10 @@ public class MyAccountPage extends TapWrappers{
 		verifyTextContainsByXpath(pageVerification, " My Account");
 	}
 
+	public OpeningPage clickLogOff(){
+	    	String logOff = prop.getProperty("MyAccount.LogOff.LinkText");
+		clickByLinkText(logOff);
+		return new OpeningPage(driver, test);		
+	}
+
 }
