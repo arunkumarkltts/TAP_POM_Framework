@@ -34,13 +34,15 @@ public abstract class Reporter {
 	public void reportStep(String desc, String status, boolean bSnap) {
 
 		long snapNumber = 100000l;
-		
-		try {
-			snapNumber= takeSnap();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
 		if (bSnap && !status.toUpperCase().equals("INFO")) {
+		    
+			try {
+				snapNumber= takeSnap();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 		// Write if it is successful or failure or information
 			if(status.toUpperCase().equals("PASS")){
 				test.log(LogStatus.PASS, desc+test.

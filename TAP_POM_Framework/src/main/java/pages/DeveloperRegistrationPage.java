@@ -126,14 +126,12 @@ public class DeveloperRegistrationPage extends TapWrappers{
 	}
 
 	public DeveloperRegistrationPage clickContinue(){
-	    	String continueButton = prop.getProperty("DeveloperRegistration.ContinueButton.Xpath");
-		clickByXpath(continueButton);
+	    	acceptAlert();
 		return this;
 	}
 
 	public OpeningPage clickCancel(){
-	    	String cancelButton = prop.getProperty("DeveloperRegistration.CancelButton.Xpath");
-		clickByXpath(cancelButton);
+	    	dismissAlert();
 		return new OpeningPage(driver, test);
 	}
 

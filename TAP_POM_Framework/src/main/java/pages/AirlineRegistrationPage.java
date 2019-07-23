@@ -54,11 +54,17 @@ public class AirlineRegistrationPage extends TapWrappers{
 	}
 
 	/*Possible Error Messages are:
-	" is already in use"
+	"is already in use"
 	"Please enter a valid email address."*/
 	public AirlineRegistrationPage verifyInvalidEmailError(String data){
 	    	String emailError = prop.getProperty("AirlineRegistration.EmailError.Xpath");	    
 	    	verifyTextContainsByXpath(emailError, data);
+		return this;
+	}
+
+	public AirlineRegistrationPage verifyInvalidEmailWarning(){
+	    	String emailWarning = prop.getProperty("AirlineRegistration.EmailWarning.Xpath");	    
+	    	verifyTextContainsByXpath(emailWarning, "Please use company Email Address");
 		return this;
 	}
 

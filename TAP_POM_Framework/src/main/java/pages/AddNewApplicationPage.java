@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import com.relevantcodes.extentreports.ExtentTest;
 import wrappers.TapWrappers;
@@ -30,7 +31,7 @@ public class AddNewApplicationPage extends TapWrappers{
 	    	selectVisibileTextByXPath(inputDropDown, data);
 		return this;
 	}
-	
+
 	public AddNewApplicationPage enterPackageName(String data){
 	    	String packageName = prop.getProperty("AddNewApplication.PackageName.Xpath");
 	    	enterByXpath(packageName, data);
@@ -124,6 +125,7 @@ public class AddNewApplicationPage extends TapWrappers{
 	public AddNewApplicationPage enterReleaseDate(String data){
 	    	String releaseDate = prop.getProperty("AddNewApplication.ReleaseDate.Xpath");
 	    	enterByXpath(releaseDate, data);
+	    	sendKeys(Keys.TAB);
 		return this;
 	}
 	

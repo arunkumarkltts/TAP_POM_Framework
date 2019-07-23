@@ -10,6 +10,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -22,6 +25,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -29,6 +33,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import utils.Reporter;
@@ -38,6 +43,9 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	public RemoteWebDriver driver;
 	protected static Properties prop;
 	public String sUrl,primaryWindowHandle,sHubUrl,sHubPort;
+	public WebDriverWait wait;
+//	public Alert alert;
+	LocalDate today = LocalDate.now();
 	
 	public GenericWrappers() {
 		Properties prop = new Properties();
@@ -56,6 +64,8 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	public GenericWrappers(RemoteWebDriver driver, ExtentTest test) {
 		this.driver = driver;
 		this.test = test;
+		this.wait = new WebDriverWait(driver, 30);
+//		this.alert = wait.until(ExpectedConditions.alertIsPresent());
 	}
 
 	public void loadObjects() {
@@ -101,7 +111,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 
 			DesiredCapabilities dc = new DesiredCapabilities();
 			dc.setBrowserName(browser);
-			dc.setPlatform(Platform.WINDOWS);
+			dc.setPlatform(Platform.WIN10);
 
 			// this is for grid run
 			if(bRemote)
@@ -196,7 +206,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	 */
 	public void enterByXpath(String xpathValue, String data) {
 		try {
-		    driver.findElement(By.xpath(xpathValue)).click();
+		    	driver.findElement(By.xpath(xpathValue)).click();
 			driver.findElement(By.xpath(xpathValue)).clear();
 			driver.findElement(By.xpath(xpathValue)).sendKeys(data);	
 			reportStep("The data: "+data+" entered successfully in field :"+xpathValue, "PASS");
@@ -389,6 +399,20 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	}
 
 	/**
+	 * This method will click the element using partial link name as locator
+	 * @param name  The partial link name (locator) of the element to be clicked
+	 * @author Arunkumar K
+	 */
+	public void clickByPartialLinkText(String name) {
+		try{
+			driver.findElement(By.partialLinkText(name)).click();
+			reportStep("The element with link name: "+name+" is clicked.", "PASS");
+		} catch (Exception e) {
+			reportStep("The element with link name: "+name+" could not be clicked.", "FAIL");
+		}
+	}
+
+	/**
 	 * This method will click the element using link name as locator
 	 * @param name  The link name (locator) of the element to be clicked
 	 * @author Arunkumar K
@@ -401,7 +425,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 			reportStep("The element with link name: "+name+" could not be clicked.", "FAIL");
 		}
 	}
-	
+
 	public void clickByLinkTextNoSnap(String name) {
 		try{
 			driver.findElement(By.linkText(name)).click();
@@ -491,7 +515,6 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		}
 		return bReturn; 
 	}
-
 
 	/**
 	 * This method will select the drop down value using id as locator
@@ -623,17 +646,43 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		}
 	}
 
+	/**
+	 * This method will retrieve the row count for the table
+	 * @param tableRows The Xpath of the table rows
+	 * @param nextButton The next button to be pressed to get to next page of the table
+	 * @author Arunkumar K
+	 */
+	public int getRowCount(String tableRows, String nextButton) {
+		try{
+		    	int rowCount = 0;
+		    	do {
+		    	    List<WebElement> rows = driver.findElements(By.xpath(tableRows));
+		    	    rowCount += rows.size();
+			} while (driver.findElement(By.xpath(nextButton)).isEnabled());
+			reportStep("The row count for "+tableRows+" is retrieved.", "PASS");
+		    	return rowCount;
+		} catch (Exception e) {
+			reportStep("The row count for "+tableRows+" could not be retrieved.", "FAIL");
+			return 0;
+		}
+	}
+
 	public long takeSnap(){
-		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L; 
+		/*long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;*/
+	    	String date = DateTimeFormatter.ofPattern("yyyyMMdd").format(today);
+		int fileCount = new File(".\\reports\\images").list().length;
+		long padding = (long) (10000+fileCount+1);
+		String fileName = date+Long.toString(padding);
+		long fName = Long.valueOf(fileName).longValue();
 		try {
-			FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File("./reports/images/"+number+".jpg"));
+			FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File("./reports/images/"+fileName+".jpg"));
 		} catch (WebDriverException e) {
 			e.printStackTrace();
 			reportStep("The browser has been closed.", "FAIL", false);
 		} catch (IOException e) {
 			reportStep("The snapshot could not be taken", "WARN", false);
 		}
-		return number;
+		return fName;
 	}
 
 }

@@ -18,7 +18,7 @@ public class HomePage extends TapWrappers{
 
 	public AddNewApplicationPage clickAddNewApplication(){
 	    	String addNewApplication = prop.getProperty("Home.AddNewApplication.LinkText");
-		clickByLinkText(addNewApplication);
+		clickByPartialLinkText(addNewApplication);
 		return new AddNewApplicationPage(driver, test);		
 	}
 

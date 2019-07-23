@@ -4,12 +4,12 @@
   <test name="Test">
 	<groups>		
 	 <run>		
-	  <include name="Registration" />		
+	  <!-- <include name="Registration" />		 -->
 	 </run>		
 	</groups>
 	<classes>
-	  <class name="testCases.TC001_Login"/>
-	  <class name="testCases.TC004_NewDeveloperRegistration" />
+	  <!-- <class name="testCases.TC004_NewDeveloperRegistration" /> -->
+	  <class name="testCases.TC0008_AddNewDeveloper"/>
 	</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
