@@ -13,7 +13,6 @@ public class MediaManagerApplicationsPage extends TapWrappers{
 		this.test = test;
 	    	String pageVerification = prop.getProperty("MediaManagerAirlineApplications.PageVerification.Xpath");
 		verifyTextContainsByXpath(pageVerification, " Applications");
-
 	}
 
 	public MediaManagerPage clickHome(){
@@ -51,6 +50,3 @@ public class MediaManagerApplicationsPage extends TapWrappers{
 	}
 
 }
-
-
-//

@@ -184,6 +184,36 @@ public class HomePage extends TapWrappers{
 		return this;		
 	}
 
+	public NewApplicationPage clickActiveTitle(String row){
+		clickByXpath("//table[@class='activeWrapper display dataTable']/tbody/tr["+row+"]/td[2]");
+		return new NewApplicationPage(driver, test);		
+	}
+
+	public HomePage clickActiveCompany(String row){
+		clickByXpath("//table[@class='activeWrapper display dataTable']/tbody/tr["+row+"]/td[4]");
+		return this;		
+	}
+
+	public HomePage clickActiveActions(String row){
+		clickByXpath("//table[@class='activeWrapper display dataTable']/tbody/tr["+row+"]/td[6]");
+		return this;		
+	}
+
+	public NewApplicationPage clickInactiveTitle(String row){
+		clickByXpath("//table[@class='inactiveWrapper display dataTable']/tbody/tr["+row+"]/td[2]");
+		return new NewApplicationPage(driver, test);		
+	}
+
+	public HomePage clickInactiveCompany(String row){
+		clickByXpath("//table[@class='inactiveWrapper display dataTable']/tbody/tr["+row+"]/td[4]");
+		return this;		
+	}
+
+	public HomePage clickInactiveActions(String row){
+		clickByXpath("//table[@class='inactiveWrapper display dataTable']/tbody/tr["+row+"]/td[6]");
+		return this;		
+	}
+
 	public OpeningPage clickLogOff(){
 	    	String logOff = prop.getProperty("Home.LogOff.LinkText");
 		clickByLinkText(logOff);

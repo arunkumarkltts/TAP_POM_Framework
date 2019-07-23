@@ -54,9 +54,21 @@ public class NewApplicationPage extends TapWrappers{
 		return new NewApplicationAddIconsPage(driver, test);
 	}
 
+	public NewApplicationAddIconsPage clickEditIcons(){
+	    	String editIcons = prop.getProperty("NewApplication.EditIcons.LinkText");
+	    	clickByLinkText(editIcons);
+		return new NewApplicationAddIconsPage(driver, test);
+	}
+
 	public NewApplicationUploadApkPage clickUploadApk(){
 	    	String uploadApk = prop.getProperty("NewApplication.UploadApk.LinkText");
 	    	clickByLinkText(uploadApk);
+		return new NewApplicationUploadApkPage(driver, test);
+	}
+
+	public NewApplicationUploadApkPage clickUploadFile(){
+	    	String uploadApkFile = prop.getProperty("NewApplication.UploadApkFile.LinkText");
+	    	clickByLinkText(uploadApkFile);
 		return new NewApplicationUploadApkPage(driver, test);
 	}
 
