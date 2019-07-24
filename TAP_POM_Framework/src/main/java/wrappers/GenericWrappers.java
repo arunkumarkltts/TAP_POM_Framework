@@ -1,5 +1,7 @@
 package wrappers;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -664,6 +666,21 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		} catch (Exception e) {
 			reportStep("The row count for "+tableRows+" could not be retrieved.", "FAIL");
 			return 0;
+		}
+	}
+
+	/**
+	 * This method will assert if the actual and expected value are equal
+	 * @param actual The actual value
+	 * @param expected The expected value
+	 * @author Arunkumar K
+	 */
+	public void verifyIfEqual(Object actual, Object expected) {
+		try{
+		    	assertEquals(actual, expected);
+			reportStep("The actual value "+actual+" is equal to expected value "+expected+".", "PASS");
+		} catch (Exception e) {
+			reportStep("The actual value "+actual+" is not equal to expected value "+expected+".", "FAIL");
 		}
 	}
 

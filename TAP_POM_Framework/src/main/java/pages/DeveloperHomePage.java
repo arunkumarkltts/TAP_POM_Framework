@@ -13,7 +13,6 @@ public class DeveloperHomePage extends TapWrappers{
 		this.test = test;
 	    	String pageVerification = prop.getProperty("DeveloperHome.PageVerification.Xpath");
 		verifyTextContainsByXpath(pageVerification, "My Apps - Thales Avionics");
-
 	}
 
 	public AddNewApplicationPage clickAddNewApplication(){
@@ -22,17 +21,10 @@ public class DeveloperHomePage extends TapWrappers{
 		return new AddNewApplicationPage(driver, test);		
 	}
 
-	/*TODO: Need to check the requirements and update the page/class of this method*/
-	public DeveloperHomePage clickBrowseApps(){
+	public MediaManagerApplicationsPage clickBrowseApps(){
 	    	String mediaManager = prop.getProperty("DeveloperHome.BrowseApps.LinkText");
 		clickByLinkText(mediaManager);
-		return this;		
-	}
-
-	public MyAppsPage clickMyApps(){
-	    	String myApps = prop.getProperty("DeveloperHome.MyApps.LinkText");
-		clickByLinkText(myApps);
-		return new MyAppsPage(driver, test);		
+		return new MediaManagerApplicationsPage(driver, test);		
 	}
 
 	public SdkPage clickSdk(){
@@ -60,7 +52,7 @@ public class DeveloperHomePage extends TapWrappers{
 	}
 
 	public NewApplicationPage clickApp(String row){
-		clickByXpath("//table[@id=\"orders\"]/tbody/tr["+row+"]/td[2]/a");
+		clickByXpath("//table[@id='orders']/tbody/tr["+row+"]/td[2]/a");
 		return new NewApplicationPage(driver, test);		
 	}
 

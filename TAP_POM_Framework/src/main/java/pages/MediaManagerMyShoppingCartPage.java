@@ -148,13 +148,13 @@ public class MediaManagerMyShoppingCartPage extends TapWrappers{
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage clickDeleteButton(String data){
+	public MediaManagerMyShoppingCartPage clickDeleteButton(){
 	    	String deleteButton = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.DeleteButton.Xpath");
 		clickByXpath(deleteButton);
 		return this;		
 	}
 
-	public MediaManagerOrderHistoryPage clickSubmitOrder(String data){
+	public MediaManagerOrderHistoryPage clickSubmitOrder(){
 	    	String submit = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.SubmitOrder.Xpath");
 		clickByXpath(submit);
 		return new MediaManagerOrderHistoryPage(driver, test);		

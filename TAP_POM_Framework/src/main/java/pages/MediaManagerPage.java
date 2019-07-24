@@ -1,7 +1,5 @@
 package pages;
 
-import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -45,14 +43,14 @@ public class MediaManagerPage extends TapWrappers{
 	public MediaManagerPage verifyAirlineCount(int count){
 	    	String nextButton = prop.getProperty("MediaManager.AirlineNextButton.Xpath");
 		int rowCount = getRowCount("//div[@id='main']//h3[contains(text(),'My Airlines')]/following-sibling::div/table/tbody/tr",nextButton);
-		assertEquals(rowCount, count);
+		verifyIfEqual(rowCount, count);
 		return this;		
 	}
 
 	public MediaManagerPage verifyOrdersCount(int count){
 	    	String nextButton = prop.getProperty("MediaManager.OrdersNextButton.Xpath");
 		int rowCount = getRowCount("//div[@id='main']//h3[contains(text(),'My Orders')]/following-sibling::div/table/tbody/tr",nextButton);
-		assertEquals(rowCount, count);
+		verifyIfEqual(rowCount, count);
 		return this;		
 	}
 

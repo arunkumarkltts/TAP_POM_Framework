@@ -14,6 +14,36 @@ public class MyAccountPage extends TapWrappers{
 	    	String pageVerification = prop.getProperty("MyAccount.PageVerification.Xpath");
 		verifyTextContainsByXpath(pageVerification, " My Account");
 	}
+	
+	public MyAccountPage clickSubmittedCheckbox(){
+	    	String submitted = prop.getProperty("MyAccount.SubmittedCheckbox.Xpath");
+		clickByXpath(submitted);
+		return this;		
+	}
+	
+	public MyAccountPage clickApprovedCheckbox(){
+	    	String approved = prop.getProperty("MyAccount.ApprovedCheckbox.Xpath");
+		clickByXpath(approved);
+		return this;		
+	}
+	
+	public MyAccountPage clickCompletedCheckbox(){
+	    	String completed = prop.getProperty("MyAccount.CompletedCheckbox.Xpath");
+		clickByXpath(completed);
+		return this;		
+	}
+	
+	public MyAccountPage clickCancelledCheckbox(){
+	    	String cancelled = prop.getProperty("MyAccount.CancelledCheckbox.Xpath");
+		clickByXpath(cancelled);
+		return this;		
+	}
+	
+	public MyAccountPage clickUpdateButton(){
+	    	String submitted = prop.getProperty("MyAccount.UpdateButton.Xpath");
+		clickByXpath(submitted);
+		return this;		
+	}
 
 	public OpeningPage clickLogOff(){
 	    	String logOff = prop.getProperty("MyAccount.LogOff.LinkText");

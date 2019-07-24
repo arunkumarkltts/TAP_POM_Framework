@@ -52,10 +52,10 @@ public class HomePage extends TapWrappers{
 		return new MiscellaneousPage(driver, test);		
 	}
 
-	public MyAppsPage clickMyApps(){
+	public HomePage clickMyApps(){
 	    	String myApps = prop.getProperty("Home.MyApps.LinkText");
 		clickByLinkText(myApps);
-		return new MyAppsPage(driver, test);		
+		return this;		
 	}
 
 	public SdkPage clickSdk(){
