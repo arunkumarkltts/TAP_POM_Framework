@@ -12,7 +12,7 @@ public class MiscellaneousListEditDevicePage extends TapWrappers{
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("MiscellaneousListEditDevices.PageVerification.Xpath");
-		verifyTextContainsByXpath(pageVerification, "Companies");
+		verifyTextContainsByXpath(pageVerification, "Edit Device");
 	}
 
 	public AddNewApplicationPage clickAddNewApplication(){
@@ -106,7 +106,7 @@ public class MiscellaneousListEditDevicePage extends TapWrappers{
 	}
 
 	public MiscellaneousListDevicesPage clickClosePopup(){
-	    	String closePopup = prop.getProperty("MiscellaneousListEditDevices.MiscellaneousListEditDevices.VerificationPopupCloseButton.Xpath.Xpath");
+	    	String closePopup = prop.getProperty("MiscellaneousListEditDevices.VerificationPopupCloseButton.Xpath");
 		clickByXpath(closePopup);
 		return new MiscellaneousListDevicesPage(driver, test);		
 	}

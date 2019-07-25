@@ -76,7 +76,7 @@ public class MiscellaneousListDevicesPage extends TapWrappers{
 	}
 
 	public MiscellaneousListDevicesPage clickClearSearch(){
-	    	String clearSearch = prop.getProperty("Users.ClearSearch.Xpath");
+	    	String clearSearch = prop.getProperty("MiscellaneousListDevices.ClearSearch.Xpath");
 		clickByXpath(clearSearch);
 		return this;		
 	}
