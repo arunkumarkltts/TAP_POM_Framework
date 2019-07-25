@@ -55,7 +55,6 @@ public class MediaManagerOrderSummaryPage extends TapWrappers{
 		clickByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@id='edit-bar']/a[@id='remove']");
 		return this;		
 	}
-
 	
 	public MediaManagerOrderSummaryPage clickOrderName(String row){
 		clickByXpath("//table/tbody/tr["+row+"]/td[4]/a");

@@ -100,7 +100,7 @@ public class MiscellaneousUpdateUserRolePage extends TapWrappers{
 	}
 
 	public MiscellaneousUpdateUserRolePage clickOkButton(){
-	    	String okButton = prop.getProperty("MiscellaneousUpdateUserRole.OkButton.Xpath");
+	    	String okButton = prop.getProperty("MiscellaneousUpdateUserRole.VerificationPopupOkButton.Xpath");
 		clickByXpath(okButton);
 		return this;		
 	}

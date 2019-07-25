@@ -64,16 +64,16 @@ public class MiscellaneousPage extends TapWrappers{
 		return new MiscellaneousAddingCompanyToAirlinesPage(driver, test);		
 	}
 
-	public MiscellaneousDeleteInactiveCompanyPage clickDeleteInactiveCompany(){
+	public CompaniesPage clickDeleteInactiveCompany(){
 	    	String deleteInactiveCompany = prop.getProperty("Miscellaneous.DeleteInactiveCompany.LinkText");
 		clickByLinkText(deleteInactiveCompany);
-		return new MiscellaneousDeleteInactiveCompanyPage(driver, test);		
+		return new CompaniesPage(driver, test);		
 	}
 
-	public MiscellaneousDeleteInactiveUsersPage clickDeleteInactiveUsers(){
+	public UsersPage clickDeleteInactiveUsers(){
 	    	String deleteInactiveUsers = prop.getProperty("Miscellaneous.DeleteInactiveUsers.LinkText");
 		clickByLinkText(deleteInactiveUsers);
-		return new MiscellaneousDeleteInactiveUsersPage(driver, test);		
+		return new UsersPage(driver, test);		
 	}
 
 	public MiscellaneousDeleteDevicePage clickDeleteDevice(){
@@ -85,7 +85,7 @@ public class MiscellaneousPage extends TapWrappers{
 	public MiscellaneousDeleteInputsPage clickDeleteInputs(){
 	    	String deleteInputs = prop.getProperty("Miscellaneous.DeleteInputs.LinkText");
 		clickByLinkText(deleteInputs);
-		return new MiscellaneousAddingCompanyToAirlinesPage(driver, test);		
+		return new MiscellaneousDeleteInputsPage(driver, test);		
 	}
 
 	public MiscellaneousAddEditDeleteCategoryPage clickAddEditDeleteCategory(){

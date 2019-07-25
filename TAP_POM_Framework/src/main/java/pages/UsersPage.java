@@ -124,13 +124,13 @@ public class UsersPage extends TapWrappers{
 	}
 
 	public CompanyPage clickInactiveUsersCompanyName(String row){
-	    	String companyName = getTextByXpath("//table[@id='users-active']/tbody/tr["+row+"]/td[6]/a");
+	    	String companyName = getTextByXpath("//table[@id='users-inactive']/tbody/tr["+row+"]/td[6]/a");
 		clickByXpath("//table[@id='users-active']/tbody/tr["+row+"]/td[6]/a");
 		return new CompanyPage(driver, test, companyName);		
 	}
 
 	public UsersPage clickInactiveUsersActions(String row){
-		clickByXpath("//table[@id='users-active']/tbody/tr["+row+"]/td[8]/a");
+		clickByXpath("//table[@id='users-inactive']/tbody/tr["+row+"]/td[8]/a");
 		return this;		
 	}
 

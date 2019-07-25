@@ -113,16 +113,14 @@ public class AirlineRegistrationPage extends TapWrappers{
 		return this;
 	}
 
-	public AirlineRegistrationPage clickContinue(){
-	    	String continueButton = prop.getProperty("AirlineRegistration.ContinueButton.Xpath");
-		clickByXpath(continueButton);
+	public AirlineRegistrationPage clickOk(){
+	    	acceptAlert();
 		return this;
 	}
 
-	public OpeningPage clickCancel(){
-	    	String cancelButton = prop.getProperty("AirlineRegistration.CancelButton.Xpath");
-		clickByXpath(cancelButton);
-		return new OpeningPage(driver, test);
+	public AirlineRegistrationPage clickCancel(){
+	    	dismissAlert();
+		return this;
 	}
 
 	public AirlineRegistrationPage verifySubmit(){

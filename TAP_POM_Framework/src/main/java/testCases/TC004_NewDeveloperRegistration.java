@@ -41,7 +41,7 @@ public class TC004_NewDeveloperRegistration extends TapWrappers {
 		.enterPassword(password)
 		.reEnterPassword(password)
 		.clickSubmitRegistrationForm()
-		.clickContinue()
+		.clickOk()
 		.enterAddress1(address1)
 		.enterAddress2(address2)
 		.enterCity(city)

@@ -684,6 +684,34 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		}
 	}
 
+	/**
+	 * This method will switch to the required frame
+	 * @param index Index value of the frame
+	 * @author Arunkumar K
+	 */
+	public void goToFrame(int index) {
+		try{
+		    	driver.switchTo().frame(index);
+			reportStep("Switch to frame "+index+" is successful", "PASS");
+		} catch (Exception e) {
+			reportStep("Switch to frame "+index+" is not successful", "FAIL");
+		}
+	}
+
+	/**
+	 * This method will switch back from the existing frame to main window;
+	 * @param index Index value of the frame
+	 * @author Arunkumar K
+	 */
+	public void getOutOfFrame() {
+		try{
+		    	driver.switchTo().defaultContent();
+			reportStep("Switch from frame is successful", "PASS");
+		} catch (Exception e) {
+			reportStep("Switch from frame is not successful", "FAIL");
+		}
+	}
+
 	public long takeSnap(){
 		/*long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;*/
 	    	String date = DateTimeFormatter.ofPattern("yyyyMMdd").format(today);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>PageObjectModel</name>
-	<comment></comment>
+	<name>TAP</name>
+	<comment>POM Test Automation Framework</comment>
 	<projects>
 	</projects>
 	<buildSpec>

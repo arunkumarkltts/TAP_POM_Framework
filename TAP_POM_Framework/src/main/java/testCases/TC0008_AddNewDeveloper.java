@@ -38,7 +38,7 @@ public class TC0008_AddNewDeveloper extends TapWrappers {
 		.enterPassword(password)
 		.reEnterPassword(password)
 		.clickSubmitRegistrationForm()
-		.clickContinue()
+		.clickOk()
 		.scrollDownAgreement()
 		.clickAgreementConfirmation()
 		.clickSubmitRegistrationForm()

@@ -125,14 +125,14 @@ public class DeveloperRegistrationPage extends TapWrappers{
 		return this;
 	}
 
-	public DeveloperRegistrationPage clickContinue(){
+	public DeveloperRegistrationPage clickOk(){
 	    	acceptAlert();
 		return this;
 	}
 
-	public OpeningPage clickCancel(){
+	public DeveloperRegistrationPage clickCancel(){
 	    	dismissAlert();
-		return new OpeningPage(driver, test);
+		return this;
 	}
 
 	public DeveloperRegistrationPage enterAddress1(String data){

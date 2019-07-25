@@ -37,7 +37,7 @@ public class TC0006_CompanyCheck extends TapWrappers {
 		.reEnterPassword(password)
 		.clickSubmitRegistrationForm()
 		.verifySubmit()
-		.clickContinue()
+		.clickOk()
 		.clickBackToHomePage();
 		
 	}
