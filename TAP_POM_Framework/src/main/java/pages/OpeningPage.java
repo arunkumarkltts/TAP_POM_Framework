@@ -29,7 +29,19 @@ public class OpeningPage extends TapWrappers{
 		clickByLinkText(registerButton);
 		return this;
 	}
-	
+
+	public OpeningPage verifyRegisterAirline(String data){
+	    	String registerAirline = prop.getProperty("Opening.VerifyRegisterAirline.Xpath");
+		verifyTextByXpath(registerAirline, data);
+		return this;
+	}
+
+	public OpeningPage verifyRegisterDeveloper(String data){
+	    	String registerDeveloper = prop.getProperty("Opening.VerifyRegisterDeveloper.Xpath");
+	    	verifyTextByXpath(registerDeveloper, data);
+		return this;
+	}
+
 	public AirlineRegistrationPage clickRegisterAirline(){
 	    	String airline = prop.getProperty("Opening.Airline.LinkText");
 		clickByLinkText(airline);

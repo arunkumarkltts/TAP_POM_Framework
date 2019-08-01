@@ -2,97 +2,70 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="18124" started-at="2019-07-23T04:35:21Z" finished-at="2019-07-23T04:35:39Z">
+  <suite name="Default suite" duration-ms="25529" started-at="2019-08-01T09:56:20Z" finished-at="2019-08-01T09:56:46Z">
     <groups>
+      <group name="Registration">
+        <method signature="TC0001_CheckNewRegister.CheckNewRegister(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="CheckNewRegister" class="testCases.TC0001_CheckNewRegister"/>
+      </group> <!-- Registration -->
     </groups>
-    <test name="Test" duration-ms="18124" started-at="2019-07-23T04:35:21Z" finished-at="2019-07-23T04:35:39Z">
-      <class name="testCases.TC0008_AddNewDeveloper">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="beforeSuite" is-config="true" duration-ms="326" started-at="2019-07-23T04:35:20Z" finished-at="2019-07-23T04:35:21Z">
+    <test name="Default test" duration-ms="25529" started-at="2019-08-01T09:56:20Z" finished-at="2019-08-01T09:56:46Z">
+      <class name="testCases.TC0001_CheckNewRegister">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="beforeSuite" is-config="true" duration-ms="924" started-at="2019-08-01T09:56:19Z" finished-at="2019-08-01T09:56:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="beforeTest" is-config="true" duration-ms="8" started-at="2019-07-23T04:35:21Z" finished-at="2019-07-23T04:35:21Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="beforeTest" is-config="true" duration-ms="9" started-at="2019-08-01T09:56:20Z" finished-at="2019-08-01T09:56:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="setValues()[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="setValues" is-config="true" duration-ms="0" started-at="2019-07-23T04:35:21Z" finished-at="2019-07-23T04:35:21Z">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="setValues" is-config="true" duration-ms="1" started-at="2019-08-01T09:56:20Z" finished-at="2019-08-01T09:56:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setValues -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="beforeMethod" is-config="true" duration-ms="5182" started-at="2019-07-23T04:35:21Z" finished-at="2019-07-23T04:35:26Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="beforeMethod" is-config="true" duration-ms="20645" started-at="2019-08-01T09:56:21Z" finished-at="2019-08-01T09:56:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="developerRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="developerRegistration" duration-ms="11826" started-at="2019-07-23T04:35:26Z" data-provider="fetchData" finished-at="2019-07-23T04:35:38Z">
+        <test-method status="PASS" signature="CheckNewRegister(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="CheckNewRegister" duration-ms="2827" started-at="2019-08-01T09:56:42Z" data-provider="fetchData" finished-at="2019-08-01T09:56:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[priyaa]]>
+                <![CDATA[Airline]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[dharshinii]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Thales IFS]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://www.thales.com]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[7895412306]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[https://www.linkedin.com/abi/login]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[dhars1@ltts.com]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Abirami@1]]>
+                <![CDATA[Developer]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- developerRegistration -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="afterMethod" is-config="true" duration-ms="693" started-at="2019-07-23T04:35:38Z" finished-at="2019-07-23T04:35:39Z">
+        </test-method> <!-- CheckNewRegister -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="afterMethod" is-config="true" duration-ms="690" started-at="2019-08-01T09:56:45Z" finished-at="2019-08-01T09:56:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=developerRegistration status=SUCCESS method=TC0008_AddNewDeveloper.developerRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b] output={null}]]]>
+                <![CDATA[[TestResult name=CheckNewRegister status=SUCCESS method=TC0001_CheckNewRegister.CheckNewRegister(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-07-23T04:35:39Z" finished-at="2019-07-23T04:35:39Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-01T09:56:46Z" finished-at="2019-08-01T09:56:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-07-23T04:35:39Z" finished-at="2019-07-23T04:35:39Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-08-01T09:56:46Z" finished-at="2019-08-01T09:56:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC0008_AddNewDeveloper@548ad73b]" name="afterSuite" is-config="true" duration-ms="211" started-at="2019-07-23T04:35:39Z" finished-at="2019-07-23T04:35:39Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="afterSuite" is-config="true" duration-ms="386" started-at="2019-08-01T09:56:46Z" finished-at="2019-08-01T09:56:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- testCases.TC0008_AddNewDeveloper -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- testCases.TC0001_CheckNewRegister -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

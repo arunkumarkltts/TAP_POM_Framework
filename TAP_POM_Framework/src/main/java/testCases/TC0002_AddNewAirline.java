@@ -7,21 +7,23 @@ import org.testng.annotations.Test;
 import pages.OpeningPage;
 import utils.TestListener;
 import wrappers.TapWrappers;
+
 @Listeners({TestListener.class})
 public class TC0002_AddNewAirline extends TapWrappers {
 	
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		dataSheetName = "TC003";
+		dataSheetName = "TC0002";
 		testCaseName = "Registration";
-		testDescription = "Register as Airline";
+		testDescription = "Check whether able to Reigster New Airline";
 		category = "smoke";
 		authors = "Abirami S";		
 	} 
 
 	@Test(dataProvider = "fetchData", groups = {"Registration"})
-	public void loginLogOut(String cName, String cPhone, String cWeb, String firstName, String lastName, String email, String password){
+	public void loginLogOut(String cName, String cPhone, String cWeb, String firstName, String lastName, 
+		String email, String password){
 		new OpeningPage(driver, test)
 		.clickRegister()
 		.clickRegisterAirline()
@@ -36,8 +38,7 @@ public class TC0002_AddNewAirline extends TapWrappers {
 		.reEnterPassword(password)
 		.clickSubmitRegistrationForm()
 		.verifySubmit()
-		.clickCancel();
-		
+		.clickBackToHomePage();
 	}
 
 }

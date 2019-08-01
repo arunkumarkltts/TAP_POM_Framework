@@ -712,6 +712,21 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		}
 	}
 
+	/**
+	 * This method will verify if given file exists or not;
+	 * @param fileName The fileName with absolute path
+	 * @author Arunkumar K
+	 */
+	public void verifyFileExists(String fileName) {
+		try{
+		    	File file = new File(fileName);
+		    	file.exists();
+			reportStep("The file "+fileName+" is available", "PASS");
+		} catch (Exception e) {
+			reportStep("The file "+fileName+" is not available", "FAIL");
+		}
+	}
+
 	public long takeSnap(){
 		/*long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;*/
 	    	String date = DateTimeFormatter.ofPattern("yyyyMMdd").format(today);

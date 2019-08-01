@@ -44,6 +44,11 @@ public class MyAccountPage extends TapWrappers{
 		clickByXpath(submitted);
 		return this;		
 	}
+	
+	public MyAccountPage clickOk(){
+	    	acceptAlert();
+		return this;		
+	}
 
 	public OpeningPage clickLogOff(){
 	    	String logOff = prop.getProperty("MyAccount.LogOff.LinkText");

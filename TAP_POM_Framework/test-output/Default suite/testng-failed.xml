@@ -3,19 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC004_NewDeveloperRegistration">
+      <class name="testCases.TC0003_CheckEmail">
         <methods>
-          <include name="developerRegistration" invocation-numbers="0"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
+          <include name="loginLogOut"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
-          <include name="setValues"/>
           <include name="beforeMethod"/>
+          <include name="setValues"/>
         </methods>
-      </class> <!-- testCases.TC004_NewDeveloperRegistration -->
+      </class> <!-- testCases.TC0003_CheckEmail -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

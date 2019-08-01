@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -14,7 +15,7 @@ public class AirlineRegistrationPage extends TapWrappers{
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("AirlineRegistration.PageVerification.Xpath");
-		verifyTextContainsByXpath(pageVerification, " Airline Registration");
+		verifyTextContainsByXpath(pageVerification, "Airline Registration");
 	}
 
 	public AirlineRegistrationPage enterCompanyName(String data){
@@ -126,6 +127,11 @@ public class AirlineRegistrationPage extends TapWrappers{
 	public AirlineRegistrationPage verifySubmit(){
 	    	String submitConfirmation = prop.getProperty("AirlineRegistration.SubmitConfirmation.Xpath");
 		verifyTextContainsByXpath(submitConfirmation, "Congratulations! Your registration form is complete.");
+		return this;
+	}
+
+	public AirlineRegistrationPage pressKey(Keys keyValue){
+	    	sendKeys(keyValue);
 		return this;
 	}
 

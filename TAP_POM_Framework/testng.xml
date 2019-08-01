@@ -8,8 +8,11 @@
 	 </run>		
 	</groups>
 	<classes>
-	  <!-- <class name="testCases.TC004_NewDeveloperRegistration" /> -->
-	  <class name="testCases.TC0008_AddNewDeveloper"/>
+	  <!-- <class name="testCases.TC0001_CheckNewRegister"/> -->
+	  <class name="testCases.TC0002_AddNewAirline"/>
+	  <!-- <class name="testCases.TC0003_CheckEmail"/>
+	  <class name="testCases.TC0004_ReenterEmailCheck"/>
+	  <class name="testCases.TC0005_CheckPassword"/> -->
 	</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

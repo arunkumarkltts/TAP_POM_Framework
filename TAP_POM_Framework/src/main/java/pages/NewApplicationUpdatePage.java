@@ -67,7 +67,7 @@ public class NewApplicationUpdatePage extends TapWrappers{
 		return this;
 	}
 	
-	public NewApplicationUpdatePage selectCatergory(String data){
+	public NewApplicationUpdatePage selectCategory(String data){
 	    	String category = prop.getProperty("NewApplicationUpdate.CategoryDropDown.Xpath");
 	    	selectVisibileTextByXPath(category, data);
 		return this;

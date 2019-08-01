@@ -15,16 +15,19 @@ public class TC0001_CheckNewRegister extends TapWrappers {
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
+		dataSheetName = "TC0001";
 		testCaseName = "Check New Register";
-		testDescription = "checking Register Button";
+		testDescription = "Check New Register menu with Developer and Airlines";
 		category = "smoke";
 		authors = "Abirami S";		
 	}
 	
 	@Test(dataProvider = "fetchData", groups = {"Registration"})
-	public void CheckNewRegister(){
+	public void CheckNewRegister(String airline, String developer){
 		new OpeningPage(driver, test)
-		.clickRegister();
+		.clickRegister()
+		.verifyRegisterAirline(airline)
+		.verifyRegisterDeveloper(developer);
 	}
 
 }

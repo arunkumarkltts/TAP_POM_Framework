@@ -1,11 +1,15 @@
 package testCases;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pages.OpeningPage;
+import utils.TestListener;
 import wrappers.TapWrappers;
 import org.openqa.selenium.Keys;
+
+@Listeners({TestListener.class})
 public class TC0003_CheckEmail extends TapWrappers {
 	
 	@BeforeClass
@@ -13,7 +17,7 @@ public class TC0003_CheckEmail extends TapWrappers {
 		browserName = "chrome";
 		dataSheetName = "TC0003";
 		testCaseName = "Email Check";
-		testDescription = "Email Check";
+		testDescription = "Check whether personal email address or company email address";
 		category = "smoke";
 		authors = "Abirami S";		
 	}
@@ -28,9 +32,9 @@ public class TC0003_CheckEmail extends TapWrappers {
 		.enterCompanyWebsite(cWeb)
 		.enterFirstName(firstName)
 		.enterLastName(lastName)
-		.enterEmail(email);
-		 sendKeys(Keys.TAB);
-		
+		.enterEmail(email)
+		.pressKey(Keys.TAB)
+		.verifyInvalidEmailWarning();		
 	}
 
 }
