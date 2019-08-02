@@ -51,10 +51,10 @@ public class LoginPage extends TapWrappers{
 		return new MediaManagerPage(driver, test);
 	}
 
-	public MediaManagerApplicationsPage clickLoginAirlineUser(){
+	public MediaManagerAllApplicationsPage clickLoginAirlineUser(){
 	    	String loginButton = prop.getProperty("Login.LoginButton.Xpath");
 		clickByXpath(loginButton);
-		return new MediaManagerApplicationsPage(driver, test);
+		return new MediaManagerAllApplicationsPage(driver, test);
 	}
 
 	public DeveloperHomePage clickLoginDeveloperUser(){

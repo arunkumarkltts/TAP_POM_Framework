@@ -12,7 +12,7 @@ public class MyAccountPage extends TapWrappers{
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("MyAccount.PageVerification.Xpath");
-		verifyTextContainsByXpath(pageVerification, " My Account");
+		verifyTextContainsByXpath(pageVerification, "My Account");
 	}
 	
 	public MyAccountPage clickSubmittedCheckbox(){

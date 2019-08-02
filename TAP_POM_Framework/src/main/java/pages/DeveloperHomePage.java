@@ -21,10 +21,10 @@ public class DeveloperHomePage extends TapWrappers{
 		return new AddNewApplicationPage(driver, test);		
 	}
 
-	public MediaManagerApplicationsPage clickBrowseApps(){
+	public MediaManagerAllApplicationsPage clickBrowseApps(){
 	    	String mediaManager = prop.getProperty("DeveloperHome.BrowseApps.LinkText");
 		clickByLinkText(mediaManager);
-		return new MediaManagerApplicationsPage(driver, test);		
+		return new MediaManagerAllApplicationsPage(driver, test);		
 	}
 
 	public SdkPage clickSdk(){

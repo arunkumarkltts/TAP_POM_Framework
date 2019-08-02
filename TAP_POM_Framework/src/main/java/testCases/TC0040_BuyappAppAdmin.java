@@ -28,7 +28,7 @@ public class TC0040_BuyappAppAdmin extends TapWrappers {
                         .clickAirline("1")
                         .clickMyShoppingCart()
                         .clickLinkToAddAppsToThisOrder()
-                        .clickAddButton(appName)
+                        .clickAppAddButton(appName)
                         .clickMyShoppingCart()
                         .enterOrderName(oName)
                         .selectCopyFrom(copy)

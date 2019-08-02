@@ -70,6 +70,18 @@ public class CompaniesPage extends TapWrappers{
 		return new MyAccountPage(driver, test);		
 	}
 
+	public CompaniesPage clickDownloadActiveCompaniesList(){
+	    	String download = prop.getProperty("Companies.DownloadActiveCompaniesList.LinkText");
+		clickByLinkText(download);
+		return this;		
+	}
+
+	public CompaniesPage verifyDownloadActiveCompaniesList(){
+	    	String home = System.getProperty("user.home");
+		verifyFileExists(home+"\\Downloads\\TAP_active_companies.csv");
+		return this;		
+	}
+
 	public CompaniesPage clickJumpToInactive(){
 	    	String jumpToInactive = prop.getProperty("Companies.JumpToInactive.LinkText");
 		clickByPartialLinkText(jumpToInactive);

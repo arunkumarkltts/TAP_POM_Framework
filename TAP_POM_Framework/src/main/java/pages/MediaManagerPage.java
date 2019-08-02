@@ -25,9 +25,9 @@ public class MediaManagerPage extends TapWrappers{
 		return new MediaManagerOrdersPage(driver, test);		
 	}
 
-	public MediaManagerApplicationsPage clickAirlineDashboard(String row){
+	public MediaManagerAllApplicationsPage clickAirlineDashboard(String row){
 		clickByXpath("//div[@id='main']//h3[contains(text(),'My Airlines')]/following-sibling::div/table/tbody/tr["+row+"]/td[2]/a[2]");
-		return new MediaManagerApplicationsPage(driver, test);		
+		return new MediaManagerAllApplicationsPage(driver, test);		
 	}
 
 	public MediaManagerOrderSummaryPage clickMyOrdersOrderNumber(String row){

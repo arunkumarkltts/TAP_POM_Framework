@@ -148,6 +148,12 @@ public class HomePage extends TapWrappers{
 		return this;		
 	}
 
+	public HomePage verifyDownloadActiveApplications(){
+	    	String home = System.getProperty("user.home");
+		verifyFileExists(home+"\\Downloads\\TAP_active_apps.csv");
+		return this;		
+	}
+
 	public HomePage clickJumpToInactive(){
 	    	String jumpToInactive = prop.getProperty("Home.JumpToInactive.LinkText");
 		clickByLinkText(jumpToInactive);

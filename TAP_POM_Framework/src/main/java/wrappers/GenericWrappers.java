@@ -651,6 +651,24 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	/**
 	 * This method will retrieve the row count for the table
 	 * @param tableRows The Xpath of the table rows
+	 * @author Arunkumar K
+	 */
+	public int getRowCount(String tableRows) {
+		try{
+		    	int rowCount = 0;
+		    	List<WebElement> rows = driver.findElements(By.xpath(tableRows));
+		    	rowCount += rows.size();
+			reportStep("The row count for "+tableRows+" is retrieved.", "PASS");
+		    	return rowCount;
+		} catch (Exception e) {
+			reportStep("The row count for "+tableRows+" could not be retrieved.", "FAIL");
+			return 0;
+		}
+	}
+
+	/**
+	 * This method will retrieve the row count for the table
+	 * @param tableRows The Xpath of the table rows
 	 * @param nextButton The next button to be pressed to get to next page of the table
 	 * @author Arunkumar K
 	 */

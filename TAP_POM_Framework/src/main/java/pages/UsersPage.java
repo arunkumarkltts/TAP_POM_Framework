@@ -76,6 +76,12 @@ public class UsersPage extends TapWrappers{
 		return this;		
 	}
 
+	public UsersPage verifyDownloadActiveUserList(){
+	    	String home = System.getProperty("user.home");
+		verifyFileExists(home+"\\Downloads\\TAP_active_users.csv");
+		return this;		
+	}
+
 	public UsersPage clickJumpToInactive(){
 	    	String jumpToInactive = prop.getProperty("Users.JumpToInactive.LinkText");
 		clickByPartialLinkText(jumpToInactive);

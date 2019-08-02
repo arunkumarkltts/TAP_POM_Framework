@@ -40,10 +40,10 @@ public class MediaManagerMyShoppingCartPage extends TapWrappers{
 		return new MediaManagerMyAccountPage(driver, test);		
 	}
 
-	public MediaManagerApplicationsPage clickLinkToAddAppsToThisOrder(){
+	public MediaManagerAllApplicationsPage clickLinkToAddAppsToThisOrder(){
 	    	String addApps = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.AddApps.LinkText");
 		clickByPartialLinkText(addApps);
-		return new MediaManagerApplicationsPage(driver, test);		
+		return new MediaManagerAllApplicationsPage(driver, test);		
 	}
 
 	public MediaManagerMyShoppingCartPage enterOrderName(String data){

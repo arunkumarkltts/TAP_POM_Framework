@@ -12,7 +12,7 @@ public class MediaManagerApplicationsPage extends TapWrappers{
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("MediaManagerAirlineApplications.PageVerification.Xpath");
-		verifyTextContainsByXpath(pageVerification, " Applications");
+		verifyTextContainsByXpath(pageVerification, "Applications");
 	}
 
 	public MediaManagerPage clickHome(){
@@ -33,13 +33,24 @@ public class MediaManagerApplicationsPage extends TapWrappers{
 		return new MediaManagerMyShoppingCartPage(driver, test);		
 	}
 
-	public MediaManagerApplicationsPage clickAddButton(String appName){
-		clickByXpath("span[contains(text(),'"+appName+"')]/parent::div/following-sibling::div/a/span");
+	public MediaManagerApplicationsPage clickAddToShoppingCart(){
+	    	String addToShoppingCart = prop.getProperty("MediaManagerAirlineApplications.AddToShoppingCart.LinkText");
+		clickByLinkText(addToShoppingCart);
 		return this;
 	}
 
-	public MediaManagerApplicationsPage clickAddButton(String appName, int occurence){
-		clickByXpath("(span[contains(text(),'"+appName+"')]/parent::div/following-sibling::div/a/span)["+occurence+"]");
+	/*Possible Error Messages are:
+	"App has been added to Shopping cart"
+	"App already in shopping cart"*/
+	public MediaManagerApplicationsPage verifyAddToShoppingCartPopup(String msg){
+	    	String verifyAddToShoppingCart = prop.getProperty("MediaManagerAirlineApplications.StatusVerification.Xpath");
+		verifyTextContainsByXpath(verifyAddToShoppingCart, msg);
+		return this;
+	}
+
+	public MediaManagerApplicationsPage clickOkButton(){
+	    	String okButton = prop.getProperty("MediaManagerAirlineApplications.StatusOkButton.Xpath");
+		clickByXpath(okButton);
 		return this;
 	}
 

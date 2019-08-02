@@ -1,5 +1,10 @@
 package pages;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -13,7 +18,6 @@ public class StoreReportsPage extends TapWrappers{
 		this.test = test;
 	    	String pageVerification = prop.getProperty("StoreReports.PageVerification.Xpath");
 		verifyTextContainsByXpath(pageVerification, "Reports");
-
 	}
 
 	public StoreReportsPage verifyAirlineCount(int count){
@@ -30,14 +34,14 @@ public class StoreReportsPage extends TapWrappers{
 		return this;		
 	}
 
-	public MediaManagerOrdersPage clickAirlineName(String row){
+	public StoreReportsAirlinesPage clickAirlineName(String row){
 		clickByXpath("//div[@id='main']//h3[contains(text(),'Airlines')]/following-sibling::div/table/tbody/tr["+row+"]/td[1]/a[1]");
-		return new MediaManagerOrdersPage(driver, test);		
+		return new StoreReportsAirlinesPage(driver, test);		
 	}
 
-	public MediaManagerOrdersPage clickVendorName(String row){
+	public StoreReportsVendorsPage clickVendorName(String row){
 		clickByXpath("//div[@id='main']//h3[contains(text(),'Vendors')]/following-sibling::div/table/tbody/tr["+row+"]/td[1]/a[1]");
-		return new MediaManagerOrdersPage(driver, test);		
+		return new StoreReportsVendorsPage(driver, test);		
 	}
 
 	public StoreReportsPage clickDownloadAllData(){
@@ -47,8 +51,15 @@ public class StoreReportsPage extends TapWrappers{
 	}
 
 	public StoreReportsPage verifyDownloadAllData(){
-	    	String downloadAllData = prop.getProperty("StoreReports.DownloadAllData.LinkText");
-		clickByLinkText(downloadAllData);
+	    	String home = System.getProperty("user.home");
+	    	ZoneId zoneId = ZoneId.of("US/Pacific");
+		LocalTime localTime=LocalTime.now(zoneId);
+		LocalDate localDate=LocalDate.now(zoneId);
+		DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HHmm");
+		DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+		String formattedTime=localTime.format(timeformatter);
+		String formattedDate=localDate.format(dateformatter);
+		verifyFileExists(home+"\\Downloads\\tap_export_all_"+formattedDate+"_"+formattedTime+".csv");
 		return this;		
 	}
 
