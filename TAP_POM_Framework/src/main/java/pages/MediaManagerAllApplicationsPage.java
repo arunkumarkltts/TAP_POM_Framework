@@ -34,22 +34,22 @@ public class MediaManagerAllApplicationsPage extends TapWrappers{
 	}
 
 	public MediaManagerAllApplicationsPage clickAppAddButton(String appName){
-		clickByXpath("span[contains(text(),'"+appName+"')]/parent::div/following-sibling::div/a/span");
+		clickByXpath("//span[contains(text(),'"+appName+"')]/parent::div/following-sibling::div/a/span");
 		return this;
 	}
 
 	public MediaManagerAllApplicationsPage clickAppAddButton(String appName, int occurence){
-		clickByXpath("(span[contains(text(),'"+appName+"')]/parent::div/following-sibling::div/a/span)["+occurence+"]");
+		clickByXpath("(//span[contains(text(),'"+appName+"')]/parent::div/following-sibling::div/a/span)["+occurence+"]");
 		return this;
 	}
 
 	public MediaManagerApplicationsPage clickApp(String appName){
-		clickByXpath("span[contains(text(),'"+appName+"')]/parent::div/preceding-sibling::a/img");
+		clickByXpath("//span[contains(text(),'"+appName+"')]/parent::div/preceding-sibling::a/img");
 		return new MediaManagerApplicationsPage(driver, test);
 	}
 
 	public MediaManagerApplicationsPage clickApp(String appName, int occurence){
-		clickByXpath("(span[contains(text(),'"+appName+"')]/parent::div/preceding-sibling::a/img)["+occurence+"]");
+		clickByXpath("(//span[contains(text(),'"+appName+"')]/parent::div/preceding-sibling::a/img)["+occurence+"]");
 		return new MediaManagerApplicationsPage(driver, test);
 	}
 

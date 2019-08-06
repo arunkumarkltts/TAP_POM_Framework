@@ -16,93 +16,147 @@ public class MiscellaneousPage extends TapWrappers{
 
 	}
 
+	public AddNewApplicationPage clickAddNewApplication(){
+	    	String addNewApplication = prop.getProperty("Miscellaneous.AddNewApplication.LinkText");
+		clickByPartialLinkText(addNewApplication);
+		return new AddNewApplicationPage(driver, test);		
+	}
+
+	public MediaManagerPage clickMediaManager(){
+	    	String mediaManager = prop.getProperty("Miscellaneous.MediaManager.LinkText");
+		clickByLinkText(mediaManager);
+		return new MediaManagerPage(driver, test);		
+	}
+
+	public StoreReportsPage clickStoreReports(){
+	    	String storeReports = prop.getProperty("Miscellaneous.StoreReports.LinkText");
+		clickByLinkText(storeReports);
+		return new StoreReportsPage(driver, test);		
+	}
+
+	public CompaniesPage clickCompanies(){
+	    	String companies = prop.getProperty("Miscellaneous.Companies.LinkText");
+		clickByLinkText(companies);
+		return new CompaniesPage(driver, test);		
+	}
+
+	public UsersPage clickUsers(){
+	    	String users = prop.getProperty("Miscellaneous.Users.LinkText");
+		clickByLinkText(users);
+		return new UsersPage(driver, test);		
+	}
+
+	public MiscellaneousPage clickMisc(){
+	    	String misc = prop.getProperty("Miscellaneous.Misc.LinkText");
+		clickByLinkText(misc);
+		return this;		
+	}
+
+	public HomePage clickMyApps(){
+	    	String myApps = prop.getProperty("Miscellaneous.MyApps.LinkText");
+		clickByLinkText(myApps);
+		return new HomePage(driver, test);		
+	}
+
+	public SdkPage clickSdk(){
+	    	String sdkPage = prop.getProperty("Miscellaneous.Sdk.LinkText");
+		clickByLinkText(sdkPage);
+		return new SdkPage(driver, test);		
+	}
+
+	public MyAccountPage clickMyAccount(){
+	    	String myAccount = prop.getProperty("Miscellaneous.MyAccount.LinkText");
+		clickByLinkText(myAccount);
+		return new MyAccountPage(driver, test);		
+	}
+
 	public MiscellaneousListDevicesPage clickListEditDevices(){
 	    	String listDevices = prop.getProperty("Miscellaneous.ListEditDevices.LinkText");
-		clickByLinkText(listDevices);
+	    	clickByPartialLinkText(listDevices);
 		return new MiscellaneousListDevicesPage(driver, test);		
 	}
 
 	public MiscellaneousAddNewDevicePage clickAddNewDevice(){
 	    	String addNewDevice = prop.getProperty("Miscellaneous.AddNewDevice.LinkText");
-		clickByLinkText(addNewDevice);
+	    	clickByPartialLinkText(addNewDevice);
 		return new MiscellaneousAddNewDevicePage(driver, test);		
 	}
 
 	public MiscellaneousListInputsPage clickListEditInputs(){
 	    	String listInputs = prop.getProperty("Miscellaneous.ListEditInputs.LinkText");
-		clickByLinkText(listInputs);
+	    	clickByPartialLinkText(listInputs);
 		return new MiscellaneousListInputsPage(driver, test);		
 	}
 
 	public MiscellaneousAddNewInputPage clickAddNewInput(){
 	    	String addNewInput = prop.getProperty("Miscellaneous.AddNewInput.LinkText");
-		clickByLinkText(addNewInput);
+	    	clickByPartialLinkText(addNewInput);
 		return new MiscellaneousAddNewInputPage(driver, test);		
 	}
 
 	public MiscellaneousUpdateUserRolePage clickUpdateUserRole(){
 	    	String updateUserRole = prop.getProperty("Miscellaneous.UpdateUserRole.LinkText");
-		clickByLinkText(updateUserRole);
+	    	clickByPartialLinkText(updateUserRole);
 		return new MiscellaneousUpdateUserRolePage(driver, test);		
 	}
 
 	public MiscellaneousListNotificationMailIdPage clickUpdateNotificationMailId(){
 	    	String updateNotificationMailId = prop.getProperty("Miscellaneous.UpdateNotificationMailId.LinkText");
-		clickByLinkText(updateNotificationMailId);
+	    	clickByPartialLinkText(updateNotificationMailId);
 		return new MiscellaneousListNotificationMailIdPage(driver, test);		
 	}
 
 	public MiscellaneousAssignMediaManagerPage clickAssignMediaManager(){
 	    	String assignMediaManager = prop.getProperty("Miscellaneous.AssignMediaManager.LinkText");
-		clickByLinkText(assignMediaManager);
+	    	clickByPartialLinkText(assignMediaManager);
 		return new MiscellaneousAssignMediaManagerPage(driver, test);		
 	}
 
 	public MiscellaneousAddingCompanyToAirlinesPage clickAddingCompanyToAirlines(){
 	    	String addingCompanyToAirlines = prop.getProperty("Miscellaneous.AddingCompanyToAirlines.LinkText");
-		clickByLinkText(addingCompanyToAirlines);
+	    	clickByPartialLinkText(addingCompanyToAirlines);
 		return new MiscellaneousAddingCompanyToAirlinesPage(driver, test);		
 	}
 
 	public CompaniesPage clickDeleteInactiveCompany(){
 	    	String deleteInactiveCompany = prop.getProperty("Miscellaneous.DeleteInactiveCompany.LinkText");
-		clickByLinkText(deleteInactiveCompany);
+	    	clickByPartialLinkText(deleteInactiveCompany);
 		return new CompaniesPage(driver, test);		
 	}
 
 	public UsersPage clickDeleteInactiveUsers(){
 	    	String deleteInactiveUsers = prop.getProperty("Miscellaneous.DeleteInactiveUsers.LinkText");
-		clickByLinkText(deleteInactiveUsers);
+	    	clickByPartialLinkText(deleteInactiveUsers);
 		return new UsersPage(driver, test);		
 	}
 
 	public MiscellaneousDeleteDevicePage clickDeleteDevice(){
 	    	String deleteDevice = prop.getProperty("Miscellaneous.DeleteDevice.LinkText");
-		clickByLinkText(deleteDevice);
+	    	clickByPartialLinkText(deleteDevice);
 		return new MiscellaneousDeleteDevicePage(driver, test);		
 	}
 
 	public MiscellaneousDeleteInputsPage clickDeleteInputs(){
 	    	String deleteInputs = prop.getProperty("Miscellaneous.DeleteInputs.LinkText");
-		clickByLinkText(deleteInputs);
+	    	clickByPartialLinkText(deleteInputs);
 		return new MiscellaneousDeleteInputsPage(driver, test);		
 	}
 
 	public MiscellaneousAddEditDeleteCategoryPage clickAddEditDeleteCategory(){
 	    	String addEditDeleteCategory = prop.getProperty("Miscellaneous.AddEditDeleteCategory.LinkText");
-		clickByLinkText(addEditDeleteCategory);
+	    	clickByPartialLinkText(addEditDeleteCategory);
 		return new MiscellaneousAddEditDeleteCategoryPage(driver, test);		
 	}
 
 	public MiscellaneousUpdateTAPAgreementPage clickUpdateTAPAgreement(){
 	    	String updateTAPAgreement = prop.getProperty("Miscellaneous.UpdateTAPAgreement.LinkText");
-		clickByLinkText(updateTAPAgreement);
+	    	clickByPartialLinkText(updateTAPAgreement);
 		return new MiscellaneousUpdateTAPAgreementPage(driver, test);		
 	}
 
 	public MiscellaneousAddEditDeleteAndroidVersionPage clickAddEditDeleteAndroidVersion(){
 	    	String addEditDeleteAndroidVersion = prop.getProperty("Miscellaneous.AddEditDeleteAndroidVersion.LinkText");
-		clickByLinkText(addEditDeleteAndroidVersion);
+	    	clickByPartialLinkText(addEditDeleteAndroidVersion);
 		return new MiscellaneousAddEditDeleteAndroidVersionPage(driver, test);		
 	}
 

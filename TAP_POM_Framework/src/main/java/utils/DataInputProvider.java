@@ -44,8 +44,14 @@ public class DataInputProvider{
 							String cellValue = "";
 							try{
 								if (row.getCell(j) != null) {
-								    	row.getCell(j).setCellType(CellType.STRING);
-									cellValue = row.getCell(j).getStringCellValue();
+								    	if (row.getCell(j).getCellType() == CellType.NUMERIC) {
+								    	    cellValue = String.valueOf((int)row.getCell(j).getNumericCellValue());
+								    	}
+								    	else {
+								    	    row.getCell(j).setCellType(CellType.STRING);
+								    	    cellValue = row.getCell(j).getStringCellValue();
+								    	}
+									
 								}
 							}catch(NullPointerException e){
 
