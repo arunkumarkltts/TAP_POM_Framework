@@ -6,19 +6,19 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 import wrappers.TapWrappers;
 
-public class MediaManagerOrderSummaryPage extends TapWrappers{
+public class MediaManagerDashboardOrderSummaryPage extends TapWrappers{
 
-	public MediaManagerOrderSummaryPage(RemoteWebDriver driver, ExtentTest test){
+	public MediaManagerDashboardOrderSummaryPage(RemoteWebDriver driver, ExtentTest test){
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("MediaManagerOrderSummary.PageVerification.Xpath");
 		verifyTextContainsByXpath(pageVerification, "Order Summary");
 	}
 
-	public MediaManagerPage clickHome(){
+	public MediaManagerAllApplicationsPage clickHome(){
 	    	String home = prop.getProperty("MediaManagerOrderSummary.Home.LinkText");
 		clickByLinkText(home);
-		return new MediaManagerPage(driver, test);		
+		return new MediaManagerAllApplicationsPage(driver, test);		
 	}
 
 	public MediaManagerOrderHistoryPage clickOrderHistory(){
@@ -45,59 +45,49 @@ public class MediaManagerOrderSummaryPage extends TapWrappers{
 		return new MediaManagerMyShoppingCartPage(driver, test);
 	}
 
-	public MediaManagerOrderSummaryPage selectStatus(String data){
+	public MediaManagerDashboardOrderSummaryPage selectStatus(String data){
 	    	String statusDropDown = prop.getProperty("MediaManagerOrderSummary.StatusDropDown.Xpath");
 	    	selectVisibileTextByXPath(statusDropDown, data);
 		return this;
 	}
 	
-	public MediaManagerOrderSummaryPage clickApply(){
+	public MediaManagerDashboardOrderSummaryPage clickApply(){
 	    	String apply = prop.getProperty("MediaManagerOrderSummary.Apply.LinkText");
 		clickByLinkText(apply);
 		return this;		
 	}
 	
-	public MediaManagerOrderSummaryPage clickRemoveAppFromOrder(String appName){
-		clickByXpathNoSnap("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@id='edit-bar']/a[@id='remove']");
+	public MediaManagerDashboardOrderSummaryPage clickRemoveAppFromOrder(String appName){
+		clickByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@id='edit-bar']/a[@id='remove']");
 		return this;		
 	}
 	
-	public MediaManagerOrderSummaryPage clickOkButton(){
-		acceptAlert();
-		return this;		
-	}
-	
-	public MediaManagerOrderSummaryPage clickCancelButton(){
-		dismissAlert();
-		return this;		
-	}
-
-	public MediaManagerOrderSummaryPage clickDiscount(String appName){
+	public MediaManagerDashboardOrderSummaryPage clickDiscount(String appName){
 		clickByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@id='edit-bar']/a[@id='discount']");
 		return this;		
 	}
 
-	public MediaManagerOrderSummaryPage enterDiscountPrice(String appName, String discountPrice){
+	public MediaManagerDashboardOrderSummaryPage enterDiscountPrice(String appName, String discountPrice){
 	    	enterByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@class='discount']/input[@name='discount_price']", discountPrice);
 		return this;		
 	}
 	
-	public MediaManagerOrderSummaryPage enterDiscountNote(String appName, String discountNote){
+	public MediaManagerDashboardOrderSummaryPage enterDiscountNote(String appName, String discountNote){
 		enterByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@class='discount']/input[@name='discount_note']", discountNote);
 		return this;		
 	}
 
-	public MediaManagerOrderSummaryPage clickApplyDiscount(String appName){
+	public MediaManagerDashboardOrderSummaryPage clickApplyDiscount(String appName){
 		clickByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@class='discount']/a[@id='discount_apply']");
 		return this;		
 	}
 	
-	public MediaManagerOrderSummaryPage clickRemoveDiscount(String appName){
+	public MediaManagerDashboardOrderSummaryPage clickRemoveDiscount(String appName){
 		clickByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@class='discount']/a[@id='discount_remove']");
 		return this;		
 	}
 	
-	public MediaManagerOrderSummaryPage verifyDiscount(String appName, String discount){
+	public MediaManagerDashboardOrderSummaryPage verifyDiscount(String appName, String discount){
 	    	String dprice = getTextByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@id='price']/div[@id='discountprice']");
 	    	Float discountPrice = Float.parseFloat(dprice.substring(1, dprice.length()));
 	    	String lprice = getTextByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@id='price']/div[@id='listprice']");

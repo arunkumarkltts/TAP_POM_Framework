@@ -18,7 +18,8 @@ public class TC0041_CreateNewProgramAppAdmin extends TapWrappers {
 		authors = "Abirami S";
 	}
 	@Test(dataProvider = "fetchData")
-	public void AddNewApplication(String uName, String pwd, String row, String prog, String progName, String progID, String active, String system){
+	public void AddNewApplication(String uName, String pwd, String row, String prog, 
+		String progName, String progID, String active, String system){
                         new OpeningPage(driver, test)
                         .clickLogin()
                         .enterEmail(uName)
@@ -30,7 +31,7 @@ public class TC0041_CreateNewProgramAppAdmin extends TapWrappers {
                         .selectProgram(prog)
                         .enterProgramName(progName)
                         .enterProgramID(progID)
-                        .selectActive(active)
+                        .selectProgramActive(active)
                         .selectSystem(system)
                         .clickSaveProgram()
                         .clickOkButton()

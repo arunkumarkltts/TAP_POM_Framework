@@ -15,10 +15,10 @@ public class MediaManagerApplicationsPage extends TapWrappers{
 		verifyTextContainsByXpath(pageVerification, "Applications");
 	}
 
-	public MediaManagerPage clickHome(){
+	public MediaManagerAllApplicationsPage clickHome(){
 	    	String home = prop.getProperty("MediaManagerAirlineApplications.Home.LinkText");
 		clickByLinkText(home);
-		return new MediaManagerPage(driver, test);		
+		return new MediaManagerAllApplicationsPage(driver, test);		
 	}
 
 	public MediaManagerOrderHistoryPage clickOrderHistory(){
@@ -31,6 +31,12 @@ public class MediaManagerApplicationsPage extends TapWrappers{
 	    	String myShoppingCart = prop.getProperty("MediaManagerAirlineApplications.MyShoppingCart.LinkText");
 		clickByLinkText(myShoppingCart);
 		return new MediaManagerMyShoppingCartPage(driver, test);		
+	}
+
+	public MediaManagerDashboardMyAccountPage clickMyAccount(){
+	    	String myAccount = prop.getProperty("MediaManagerAirlineApplications.MyAccount.LinkText");
+		clickByLinkText(myAccount);
+		return new MediaManagerDashboardMyAccountPage(driver, test);		
 	}
 
 	public MediaManagerApplicationsPage clickAddToShoppingCart(){

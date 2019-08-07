@@ -28,7 +28,7 @@ public class TC0053_ShoppingcartPop extends TapWrappers {
                     	.enterPassword(pwd)
                     	.clickLoginSuperUser()
                         .clickMediaManager()
-                        .clickAirline(row)
+                        .clickAirlineDashboard(row)
                         .clickHome()
                         .clickApp(appName)
                         .clickAddToShoppingCart();

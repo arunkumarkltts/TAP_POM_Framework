@@ -7,37 +7,37 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 import wrappers.TapWrappers;
 
-public class MediaManagerMyShoppingCartPage extends TapWrappers{
+public class MediaManagerDashboardMyShoppingCartPage extends TapWrappers{
 
-	public MediaManagerMyShoppingCartPage(RemoteWebDriver driver, ExtentTest test){
+	public MediaManagerDashboardMyShoppingCartPage(RemoteWebDriver driver, ExtentTest test){
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.PageVerification.Xpath");
 		verifyTextContainsByXpath(pageVerification, "Order Summary");
 	}
 
-	public MediaManagerPage clickHome(){
+	public MediaManagerAllApplicationsPage clickHome(){
 	    	String home = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.Home.LinkText");
 		clickByLinkText(home);
-		return new MediaManagerPage(driver, test);		
+		return new MediaManagerAllApplicationsPage(driver, test);		
 	}
 
-	public MediaManagerOrderHistoryPage clickOrderHistory(){
-	    	String home = prop.getProperty("MediaManagerAirlineOrders.Home.LinkText");
-		clickByLinkText(home);
-		return new MediaManagerOrderHistoryPage(driver, test);		
+	public MediaManagerDashboardOrderHistoryPage clickOrderHistory(){
+	    	String orderHistory = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.OrderHistory.LinkText");
+		clickByLinkText(orderHistory);
+		return new MediaManagerDashboardOrderHistoryPage(driver, test);		
 	}
 
-	public MediaManagerMyShoppingCartPage clickMyShoppingCart(){
+	public MediaManagerDashboardMyShoppingCartPage clickMyShoppingCart(){
 	    	String myShoppingCart = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.MyShoppingCart.LinkText");
 		clickByLinkText(myShoppingCart);
 		return this;		
 	}
 
-	public MediaManagerMyAccountPage clickMyAccount(){
+	public MediaManagerDashboardMyAccountPage clickMyAccount(){
 	    	String myAccount = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.MyAccount.LinkText");
 		clickByLinkText(myAccount);
-		return new MediaManagerMyAccountPage(driver, test);		
+		return new MediaManagerDashboardMyAccountPage(driver, test);		
 	}
 
 	public MediaManagerAllApplicationsPage clickLinkToAddAppsToThisOrder(){
@@ -46,56 +46,56 @@ public class MediaManagerMyShoppingCartPage extends TapWrappers{
 		return new MediaManagerAllApplicationsPage(driver, test);		
 	}
 
-	public MediaManagerMyShoppingCartPage enterOrderName(String data){
+	public MediaManagerDashboardMyShoppingCartPage enterOrderName(String data){
 	    	String orderName = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.OrderName.Xpath");
 		enterByXpath(orderName, data);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage enterDescription(String data){
+	public MediaManagerDashboardMyShoppingCartPage enterDescription(String data){
 	    	String description = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.Description.Xpath");
 		enterByXpath(description, data);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage enterRequestedPackageDate(String date){
+	public MediaManagerDashboardMyShoppingCartPage enterRequestedPackageDate(String date){
 	    	String requestedPackageDate = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.RequestedPackageDate.Xpath");
 		enterByXpath(requestedPackageDate, date);
 		sendKeys(Keys.TAB);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage selectProgram(String data){
+	public MediaManagerDashboardMyShoppingCartPage selectProgram(String programData){
 	    	String program = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ProgramDropDown.Xpath");
-		selectVisibileTextByXPath(program, data);
+		selectVisibileTextByXPath(program, programData);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage enterProgramName(String data){
+	public MediaManagerDashboardMyShoppingCartPage enterProgramName(String programNameData){
 	    	String programName = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ProgramName.Xpath");
-		enterByXpath(programName, data);
+		enterByXpath(programName, programNameData);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage enterProgramID(String data){
+	public MediaManagerDashboardMyShoppingCartPage enterProgramID(String programIDData){
 	    	String programID = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ProgramID.Xpath");
-		enterByXpath(programID, data);
+		enterByXpath(programID, programIDData);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage selectProgramActive(String data){
+	public MediaManagerDashboardMyShoppingCartPage selectProgramActive(String activeData){
 	    	String active = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ProgramActive.Xpath");
-		selectVisibileTextByXPath(active, data);
+		selectVisibileTextByXPath(active, activeData);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage selectSystem(String data){
+	public MediaManagerDashboardMyShoppingCartPage selectSystem(String systemData){
 	    	String system = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ProgramSystem.Xpath");
-		selectVisibileTextByXPath(system, data);
+		selectVisibileTextByXPath(system, systemData);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage clickSaveProgram(){
+	public MediaManagerDashboardMyShoppingCartPage clickSaveProgram(){
 	    	String saveProgram = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.SaveProgram.Xpath");
 		clickByXpath(saveProgram);
 		return this;		
@@ -104,102 +104,102 @@ public class MediaManagerMyShoppingCartPage extends TapWrappers{
 	/**Possible verification text's are as below
 	*Program Saved
 	*Aircraft Saved*/
-	public MediaManagerMyShoppingCartPage verifyNewProgram(String data){
+	public MediaManagerDashboardMyShoppingCartPage verifyNewProgram(String data){
 	    	String newProgramConfirmation = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.StatusVerification.Xpath");
 		verifyTextContainsByXpath(newProgramConfirmation, data);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage clickOkButton(){
+	public MediaManagerDashboardMyShoppingCartPage clickOkButton(){
 	    	String okButton = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.StatusOkButton.Xpath");
 		clickByXpath(okButton);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage selectCopyFrom(String data){
+	public MediaManagerDashboardMyShoppingCartPage selectCopyFrom(String data){
 	    	String copyFrom = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.CopyFromDropDown.Xpath");
 	    	selectVisibileTextByXPath(copyFrom, data);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage clickAircraftNew(){
+	public MediaManagerDashboardMyShoppingCartPage clickAircraftNew(){
 	    	String newAircraft = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.Aircraft.Xpath");
 		clickByXpath(newAircraft);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage enterAircraftTailNumber(String tailNumber){
+	public MediaManagerDashboardMyShoppingCartPage enterAircraftTailNumber(String tailNumber){
 	    	String tailNum = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.TailNumber.Xpath");
 		enterByXpath(tailNum, tailNumber);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage enterAircraftType(String type){
+	public MediaManagerDashboardMyShoppingCartPage enterAircraftType(String type){
 	    	String aircraftType = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.AircraftType.Xpath");
 		enterByXpath(aircraftType, type);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage selectAircraftActive(String activeData){
+	public MediaManagerDashboardMyShoppingCartPage selectAircraftActive(String activeData){
 	    	String active = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.AircraftActive.Xpath");
 		selectVisibileTextByXPath(active, activeData);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage selectAirlineProgram(String airlineProgram){
+	public MediaManagerDashboardMyShoppingCartPage selectAirlineProgram(String airlineProgram){
 	    	String airlineProg = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.AirlineProgram.Xpath");
 		selectVisibileTextByXPath(airlineProg, airlineProgram);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage clickSaveAircraft(){
+	public MediaManagerDashboardMyShoppingCartPage clickSaveAircraft(){
 	    	String saveAircraft = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.SaveAircraft.Xpath");
 		clickByXpath(saveAircraft);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage enterOrderStartDate(String date){
+	public MediaManagerDashboardMyShoppingCartPage enterOrderStartDate(String date){
 	    	String startDate = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.StartDate.Xpath");
 		enterByXpath(startDate, date);
 		sendKeys(Keys.TAB);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage enterOrderEndDate(String date){
+	public MediaManagerDashboardMyShoppingCartPage enterOrderEndDate(String date){
 	    	String endDate = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.EndDate.Xpath");
 		enterByXpath(endDate, date);
 		sendKeys(Keys.TAB);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage clickSelectAll(){
+	public MediaManagerDashboardMyShoppingCartPage clickSelectAll(){
 	    	String selectAll = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.SelectAllCheckbox.Xpath");
 		clickByXpath(selectAll);
 		return this;		
 	}
 
-	public MediaManagerMyShoppingCartPage clickDeleteButton(){
+	public MediaManagerDashboardMyShoppingCartPage clickDeleteButton(){
 	    	String deleteButton = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.DeleteButton.Xpath");
 		clickByXpath(deleteButton);
 		return this;		
 	}
 
-	public MediaManagerOrderHistoryPage clickSubmitOrder(){
+	public MediaManagerDashboardOrderHistoryPage clickSubmitOrder(){
 	    	String submit = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.SubmitOrder.Xpath");
 		clickByXpath(submit);
-		return new MediaManagerOrderHistoryPage(driver, test);		
+		return new MediaManagerDashboardOrderHistoryPage(driver, test);		
 	}
 
-	public MediaManagerOrderSummaryPage clickUpdateOrder(){
+	public MediaManagerDashboardOrderSummaryPage clickUpdateOrder(){
 	    	String update = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.UpdateOrder.Xpath");
 		clickByXpath(update);
-		return new MediaManagerOrderSummaryPage(driver, test);		
+		return new MediaManagerDashboardOrderSummaryPage(driver, test);		
 	}
 
-	public MediaManagerOrderSummaryPage clickCancelOrder(){
+	public MediaManagerDashboardOrderSummaryPage clickCancelOrder(){
 	    	String cancel = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.CancelOrder.Xpath");
 		clickByXpath(cancel);
-		return new MediaManagerOrderSummaryPage(driver, test);		
+		return new MediaManagerDashboardOrderSummaryPage(driver, test);		
 	}
 
 	public OpeningPage clickLogOff(){

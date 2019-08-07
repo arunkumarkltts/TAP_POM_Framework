@@ -44,7 +44,7 @@ public class MyAccountPage extends TapWrappers{
 		clickByXpath(submitted);
 		return this;		
 	}
-	
+
 	public MyAccountPage clickOk(){
 	    	acceptAlert();
 		return this;		

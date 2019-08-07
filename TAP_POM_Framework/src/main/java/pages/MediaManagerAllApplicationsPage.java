@@ -15,22 +15,78 @@ public class MediaManagerAllApplicationsPage extends TapWrappers{
 		verifyTextContainsByXpath(pageVerification, "Applications");
 	}
 
-	public MediaManagerPage clickHome(){
+	public MediaManagerAllApplicationsPage clickCategory(){
+	    	String category = prop.getProperty("MediaManagerAirlineAllApplications.Category.LinkText");
+		clickByPartialLinkText(category);
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickCategoryItem(String categoryName){
+		clickByXpath("//div[@class='collapse navbar-collapse']//a[contains(text(),'"+categoryName+"')]");
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickVendor(){
+	    	String vendor = prop.getProperty("MediaManagerAirlineAllApplications.Vendor.LinkText");
+		clickByPartialLinkText(vendor);
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickVendorItem(String vendorName){
+		clickByXpath("//div[@class='collapse navbar-collapse']//a[contains(text(),'"+vendorName+"')]");
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickType(){
+	    	String type = prop.getProperty("MediaManagerAirlineAllApplications.Type.LinkText");
+		clickByPartialLinkText(type);
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickTypeItem(String typeName){
+		clickByXpath("//div[@class='collapse navbar-collapse']//a[contains(text(),'"+typeName+"')]");
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickDevice(){
+	    	String device = prop.getProperty("MediaManagerAirlineAllApplications.Device.LinkText");
+		clickByPartialLinkText(device);
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickDeviceItem(String deviceName){
+		clickByXpath("//div[@class='collapse navbar-collapse']//a[contains(text(),'"+deviceName+"')]");
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickClearFilters(){
+	    	String clearFilters = prop.getProperty("MediaManagerAirlineAllApplications.ClearFilters.LinkText");
+		clickByPartialLinkText(clearFilters);
+		return this;		
+	}
+
+	public MediaManagerAllApplicationsPage clickHome(){
 	    	String home = prop.getProperty("MediaManagerAirlineAllApplications.Home.LinkText");
 		clickByLinkText(home);
-		return new MediaManagerPage(driver, test);		
+		return this;		
 	}
 
-	public MediaManagerOrderHistoryPage clickOrderHistory(){
+	public MediaManagerDashboardOrderHistoryPage clickOrderHistory(){
 	    	String home = prop.getProperty("MediaManagerAirlineAllApplications.OrderHistory.LinkText");
 		clickByLinkText(home);
-		return new MediaManagerOrderHistoryPage(driver, test);		
+		return new MediaManagerDashboardOrderHistoryPage(driver, test);		
 	}
 
-	public MediaManagerMyShoppingCartPage clickMyShoppingCart(){
+	public MediaManagerDashboardMyShoppingCartPage clickMyShoppingCart(){
 	    	String myShoppingCart = prop.getProperty("MediaManagerAirlineAllApplications.MyShoppingCart.LinkText");
 		clickByLinkText(myShoppingCart);
-		return new MediaManagerMyShoppingCartPage(driver, test);		
+		return new MediaManagerDashboardMyShoppingCartPage(driver, test);		
+	}
+
+	public MediaManagerDashboardMyAccountPage clickMyAccount(){
+	    	String myAccount = prop.getProperty("MediaManagerAirlineAllApplications.MyAccount.LinkText");
+		clickByLinkText(myAccount);
+		return new MediaManagerDashboardMyAccountPage(driver, test);		
 	}
 
 	public MediaManagerAllApplicationsPage clickAppAddButton(String appName){

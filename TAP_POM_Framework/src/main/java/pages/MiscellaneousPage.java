@@ -12,8 +12,7 @@ public class MiscellaneousPage extends TapWrappers{
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("Miscellaneous.PageVerification.Xpath");
-		verifyTextContainsByXpath(pageVerification, "Users");
-
+		verifyTextContainsByXpath(pageVerification, "Miscellaneous!");
 	}
 
 	public AddNewApplicationPage clickAddNewApplication(){
@@ -94,10 +93,40 @@ public class MiscellaneousPage extends TapWrappers{
 		return new MiscellaneousAddNewInputPage(driver, test);		
 	}
 
+	public MiscellaneousStatisticsReportPage clickStatisticsReport(){
+	    	String statisticsReport = prop.getProperty("Miscellaneous.StatisticsReport.LinkText");
+	    	clickByPartialLinkText(statisticsReport);
+		return new MiscellaneousStatisticsReportPage(driver, test);		
+	}
+
+	public MiscellaneousEmailEditorPage clickEmailEditor(){
+	    	String emailEditor = prop.getProperty("Miscellaneous.EmailEditor.LinkText");
+	    	clickByPartialLinkText(emailEditor);
+		return new MiscellaneousEmailEditorPage(driver, test);		
+	}
+
+	public MiscellaneousMassUploadPage clickMassUpload(){
+	    	String massUpload = prop.getProperty("Miscellaneous.MassUpload.LinkText");
+	    	clickByPartialLinkText(massUpload);
+		return new MiscellaneousMassUploadPage(driver, test);		
+	}
+
 	public MiscellaneousUpdateUserRolePage clickUpdateUserRole(){
 	    	String updateUserRole = prop.getProperty("Miscellaneous.UpdateUserRole.LinkText");
 	    	clickByPartialLinkText(updateUserRole);
 		return new MiscellaneousUpdateUserRolePage(driver, test);		
+	}
+
+	public MiscellaneousAddUpdateBillboardsPage clickAddUpdateBillboards(){
+	    	String addUpdateBillboards = prop.getProperty("Miscellaneous.AddUpdateBillboards.LinkText");
+	    	clickByPartialLinkText(addUpdateBillboards);
+		return new MiscellaneousAddUpdateBillboardsPage(driver, test);		
+	}
+
+	public MiscellaneousAppstoreImagesPage clickAppstoreImages(){
+	    	String appstoreImages = prop.getProperty("Miscellaneous.AppstoreImages.LinkText");
+	    	clickByPartialLinkText(appstoreImages);
+		return new MiscellaneousAppstoreImagesPage(driver, test);		
 	}
 
 	public MiscellaneousListNotificationMailIdPage clickUpdateNotificationMailId(){
@@ -158,6 +187,12 @@ public class MiscellaneousPage extends TapWrappers{
 	    	String addEditDeleteAndroidVersion = prop.getProperty("Miscellaneous.AddEditDeleteAndroidVersion.LinkText");
 	    	clickByPartialLinkText(addEditDeleteAndroidVersion);
 		return new MiscellaneousAddEditDeleteAndroidVersionPage(driver, test);		
+	}
+
+	public MiscellaneousTypeFilterCustomizationPage clickTypeFilterCustomization(){
+	    	String typeFilterCustomization = prop.getProperty("Miscellaneous.TypeFilterCustomization.LinkText");
+	    	clickByPartialLinkText(typeFilterCustomization);
+		return new MiscellaneousTypeFilterCustomizationPage(driver, test);		
 	}
 
 	public OpeningPage clickLogOff(){

@@ -30,7 +30,7 @@ public class TC0025_CreateNewProgram extends TapWrappers {
                         .selectProgram(prog)
                         .enterProgramName(progName)
                         .enterProgramID(progID)
-                        .selectActive(active)
+                        .selectProgramActive(active)
                         .selectSystem(system)
                         .clickSaveProgram()
                         .clickOkButton()
