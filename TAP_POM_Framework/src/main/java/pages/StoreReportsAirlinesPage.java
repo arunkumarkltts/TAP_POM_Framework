@@ -26,24 +26,24 @@ public class StoreReportsAirlinesPage extends TapWrappers{
 		return this;		
 	}
 
-	public StoreReportsAirlinesPage clickDownload(){
+	public StoreReportsAirlinesPage clickDownloadAirlineReport(){
 	    	String download = prop.getProperty("StoreReportsAirlines.Download.LinkText");
 		clickByLinkText(download);
 		return this;		
 	}
 
-//	public StoreReportsAirlinesPageee verifyDownloadAllData(){
-//	    	String home = System.getProperty("user.home");
-//	    	ZoneId zoneId = ZoneId.of("US/Pacific");
-//		LocalTime localTime=LocalTime.now(zoneId);
-//		LocalDate localDate=LocalDate.now(zoneId);
-//		DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HHmm");
-//		DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-//		String formattedTime=localTime.format(timeformatter);
-//		String formattedDate=localDate.format(dateformatter);
-//		verifyFileExists(home+"\\Downloads\\tap_export_airline_"+formattedDate+"_"+formattedTime+".csv");
-//		return this;		
-//	}
+	public StoreReportsAirlinesPage verifyDownloadAirlineReport(){
+	    	String home = System.getProperty("user.home");
+	    	ZoneId zoneId = ZoneId.of("US/Pacific");
+		LocalTime localTime=LocalTime.now(zoneId);
+		LocalDate localDate=LocalDate.now(zoneId);
+		DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HHmm");
+		DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+		String formattedTime=localTime.format(timeformatter);
+		String formattedDate=localDate.format(dateformatter);
+		verifyFileExists(home+"\\Downloads\\","tap_export_airline_*"+formattedDate+"_"+formattedTime+".csv");
+		return this;		
+	}
 
 	public OpeningPage clickLogOff(){
 	    	String logOff = prop.getProperty("StoreReports.LogOff.LinkText");

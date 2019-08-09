@@ -22,8 +22,8 @@ public class MediaManagerMyAccountPage extends TapWrappers{
 	}
 
 	public MediaManagerOrderHistoryPage clickOrderHistory(){
-	    	String home = prop.getProperty("MediaManagerAirlineOrders.Home.LinkText");
-		clickByLinkText(home);
+	    	String orderHistory = prop.getProperty("MediaManagerAirlineOrders.OrderHistory.LinkText");
+		clickByLinkText(orderHistory);
 		return new MediaManagerOrderHistoryPage(driver, test);		
 	}
 
@@ -34,7 +34,7 @@ public class MediaManagerMyAccountPage extends TapWrappers{
 	}
 
 	public MediaManagerMyAccountPage clickMyAccount(){
-	    	String myAccount = prop.getProperty("MediaManagerAirlineOrdersMyAccount.MyShoppingCart.LinkText");
+	    	String myAccount = prop.getProperty("MediaManagerAirlineOrdersMyAccount.MyAccount.LinkText");
 		clickByLinkText(myAccount);
 		return this;		
 	}

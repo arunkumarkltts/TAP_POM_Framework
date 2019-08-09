@@ -46,6 +46,24 @@ public class MediaManagerOrderHistoryPage extends TapWrappers{
 		return this;		
 	}*/
 
+	public MediaManagerOrderHistoryPage clickExportOrderHistory(){
+	    	String export = prop.getProperty("MediaManagerAirlineOrderHistory.ExportButton.Xpath");
+	    	clickByXpath(export);
+		return this;		
+	}
+
+	public MediaManagerOrderHistoryPage verifyExportOrderHistory(){
+	    	String home = System.getProperty("user.home");
+		verifyFileExists(home+"\\Downloads\\TAP_order_history.csv");
+		return this;		
+	}
+
+	public MediaManagerOrderHistoryPage enterSearch(String data){
+	    	String search = prop.getProperty("MediaManagerAirlineOrderHistory.Search.Xpath");
+	    	enterByXpath(search, data);
+	    	return this;
+	}
+
 	public MediaManagerOrderSummaryPage clickOrderNumber(String row){
 		clickByXpath("//table/tbody/tr["+row+"]/td[1]/a");
 		return new MediaManagerOrderSummaryPage(driver, test);		

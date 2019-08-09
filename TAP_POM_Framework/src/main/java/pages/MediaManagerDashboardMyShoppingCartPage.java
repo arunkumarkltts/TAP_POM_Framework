@@ -71,6 +71,12 @@ public class MediaManagerDashboardMyShoppingCartPage extends TapWrappers{
 		return this;		
 	}
 
+	public MediaManagerDashboardMyShoppingCartAirlineProgramsPage clickViewAllProgramsButton(){
+	    	String viewAllPrograms = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ViewAllProgramsButton.Xpath");
+		clickByXpath(viewAllPrograms);
+		return new MediaManagerDashboardMyShoppingCartAirlineProgramsPage(driver, test);		
+	}
+
 	public MediaManagerDashboardMyShoppingCartPage enterProgramName(String programNameData){
 	    	String programName = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ProgramName.Xpath");
 		enterByXpath(programName, programNameData);
@@ -126,6 +132,12 @@ public class MediaManagerDashboardMyShoppingCartPage extends TapWrappers{
 	    	String newAircraft = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.Aircraft.Xpath");
 		clickByXpath(newAircraft);
 		return this;		
+	}
+
+	public MediaManagerDashboardMyShoppingCartAirlineAircraftsPage clickViewAllAircraftButton(){
+	    	String viewAllAircraft = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ViewAllAircraftButton.Xpath");
+		clickByXpath(viewAllAircraft);
+		return new MediaManagerDashboardMyShoppingCartAirlineAircraftsPage(driver, test);		
 	}
 
 	public MediaManagerDashboardMyShoppingCartPage enterAircraftTailNumber(String tailNumber){

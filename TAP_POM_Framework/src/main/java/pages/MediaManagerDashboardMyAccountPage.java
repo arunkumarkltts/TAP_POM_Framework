@@ -22,8 +22,8 @@ public class MediaManagerDashboardMyAccountPage extends TapWrappers{
 	}
 
 	public MediaManagerDashboardOrderHistoryPage clickOrderHistory(){
-	    	String home = prop.getProperty("MediaManagerAirlineOrders.Home.LinkText");
-		clickByLinkText(home);
+	    	String orderHistory = prop.getProperty("MediaManagerAirlineOrders.Home.LinkText");
+		clickByLinkText(orderHistory);
 		return new MediaManagerDashboardOrderHistoryPage(driver, test);		
 	}
 

@@ -22,8 +22,8 @@ public class MediaManagerDashboardOrderSummaryPage extends TapWrappers{
 	}
 
 	public MediaManagerOrderHistoryPage clickOrderHistory(){
-	    	String home = prop.getProperty("MediaManagerOrderSummary.OrderHistory.LinkText");
-		clickByLinkText(home);
+	    	String orderHistory = prop.getProperty("MediaManagerOrderSummary.OrderHistory.LinkText");
+		clickByLinkText(orderHistory);
 		return new MediaManagerOrderHistoryPage(driver, test);		
 	}
 

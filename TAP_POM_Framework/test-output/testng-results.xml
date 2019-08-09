@@ -2,70 +2,55 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25529" started-at="2019-08-01T09:56:20Z" finished-at="2019-08-01T09:56:46Z">
+  <suite name="Default suite" duration-ms="44557" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:58Z">
     <groups>
-      <group name="Registration">
-        <method signature="TC0001_CheckNewRegister.CheckNewRegister(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="CheckNewRegister" class="testCases.TC0001_CheckNewRegister"/>
-      </group> <!-- Registration -->
     </groups>
-    <test name="Default test" duration-ms="25529" started-at="2019-08-01T09:56:20Z" finished-at="2019-08-01T09:56:46Z">
-      <class name="testCases.TC0001_CheckNewRegister">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="beforeSuite" is-config="true" duration-ms="924" started-at="2019-08-01T09:56:19Z" finished-at="2019-08-01T09:56:20Z">
+    <test name="Default test" duration-ms="44557" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:58Z">
+      <class name="utils.Temp">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:utils.Temp@71d15f18]" name="beforeSuite" is-config="true" duration-ms="307" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="beforeTest" is-config="true" duration-ms="9" started-at="2019-08-01T09:56:20Z" finished-at="2019-08-01T09:56:20Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:utils.Temp@71d15f18]" name="beforeTest" is-config="true" duration-ms="5" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="setValues()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="setValues" is-config="true" duration-ms="1" started-at="2019-08-01T09:56:20Z" finished-at="2019-08-01T09:56:20Z">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:utils.Temp@71d15f18]" name="setValues" is-config="true" duration-ms="0" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setValues -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="beforeMethod" is-config="true" duration-ms="20645" started-at="2019-08-01T09:56:21Z" finished-at="2019-08-01T09:56:42Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:utils.Temp@71d15f18]" name="beforeMethod" is-config="true" duration-ms="42841" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="CheckNewRegister(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="CheckNewRegister" duration-ms="2827" started-at="2019-08-01T09:56:42Z" data-provider="fetchData" finished-at="2019-08-01T09:56:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Airline]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Developer]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="FileChecker()[pri:0, instance:utils.Temp@71d15f18]" name="FileChecker" duration-ms="856" started-at="2019-08-09T04:52:56Z" finished-at="2019-08-09T04:52:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckNewRegister -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="afterMethod" is-config="true" duration-ms="690" started-at="2019-08-01T09:56:45Z" finished-at="2019-08-01T09:56:46Z">
+        </test-method> <!-- FileChecker -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:utils.Temp@71d15f18]" name="afterMethod" is-config="true" duration-ms="793" started-at="2019-08-09T04:52:57Z" finished-at="2019-08-09T04:52:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckNewRegister status=SUCCESS method=TC0001_CheckNewRegister.CheckNewRegister(java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18] output={null}]]]>
+                <![CDATA[[TestResult name=FileChecker status=SUCCESS method=Temp.FileChecker()[pri:0, instance:utils.Temp@71d15f18] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-01T09:56:46Z" finished-at="2019-08-01T09:56:46Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:utils.Temp@71d15f18]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-09T04:52:58Z" finished-at="2019-08-09T04:52:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-08-01T09:56:46Z" finished-at="2019-08-01T09:56:46Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:utils.Temp@71d15f18]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-08-09T04:52:58Z" finished-at="2019-08-09T04:52:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC0001_CheckNewRegister@71d15f18]" name="afterSuite" is-config="true" duration-ms="386" started-at="2019-08-01T09:56:46Z" finished-at="2019-08-01T09:56:46Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:utils.Temp@71d15f18]" name="afterSuite" is-config="true" duration-ms="298" started-at="2019-08-09T04:52:58Z" finished-at="2019-08-09T04:52:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- testCases.TC0001_CheckNewRegister -->
+      </class> <!-- utils.Temp -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

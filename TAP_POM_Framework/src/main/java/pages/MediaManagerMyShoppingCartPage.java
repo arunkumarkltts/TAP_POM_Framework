@@ -23,8 +23,8 @@ public class MediaManagerMyShoppingCartPage extends TapWrappers{
 	}
 
 	public MediaManagerOrderHistoryPage clickOrderHistory(){
-	    	String home = prop.getProperty("MediaManagerAirlineOrders.Home.LinkText");
-		clickByLinkText(home);
+	    	String orderHistory = prop.getProperty("MediaManagerAirlineOrders.OrderHistory.LinkText");
+		clickByLinkText(orderHistory);
 		return new MediaManagerOrderHistoryPage(driver, test);		
 	}
 
@@ -69,6 +69,12 @@ public class MediaManagerMyShoppingCartPage extends TapWrappers{
 	    	String program = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ProgramDropDown.Xpath");
 		selectVisibileTextByXPath(program, data);
 		return this;		
+	}
+
+	public MediaManagerMyShoppingCartAirlineProgramsPage clickViewAllProgramsButton(){
+	    	String viewAllPrograms = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ViewAllProgramsButton.Xpath");
+		clickByXpath(viewAllPrograms);
+		return new MediaManagerMyShoppingCartAirlineProgramsPage(driver, test);		
 	}
 
 	public MediaManagerMyShoppingCartPage enterProgramName(String data){
@@ -126,6 +132,12 @@ public class MediaManagerMyShoppingCartPage extends TapWrappers{
 	    	String newAircraft = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.Aircraft.Xpath");
 		clickByXpath(newAircraft);
 		return this;		
+	}
+
+	public MediaManagerMyShoppingCartAirlineAircraftsPage clickViewAllAircraftButton(){
+	    	String viewAllAircraft = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ViewAllAircraftButton.Xpath");
+		clickByXpath(viewAllAircraft);
+		return new MediaManagerMyShoppingCartAirlineAircraftsPage(driver, test);		
 	}
 
 	public MediaManagerMyShoppingCartPage enterAircraftTailNumber(String tailNumber){

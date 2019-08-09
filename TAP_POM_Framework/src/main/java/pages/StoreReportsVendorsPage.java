@@ -26,24 +26,24 @@ public class StoreReportsVendorsPage extends TapWrappers{
 		return this;		
 	}
 
-	public StoreReportsVendorsPage clickDownload(){
+	public StoreReportsVendorsPage clickDownloadVendorReport(){
 	    	String download = prop.getProperty("StoreReportsVendors.Download.LinkText");
 		clickByLinkText(download);
 		return this;		
 	}
 
-//	public StoreReportsVendorsPage verifyDownloadAllData(){
-//	    	String home = System.getProperty("user.home");
-//	    	ZoneId zoneId = ZoneId.of("US/Pacific");
-//		LocalTime localTime=LocalTime.now(zoneId);
-//		LocalDate localDate=LocalDate.now(zoneId);
-//		DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HHmm");
-//		DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-//		String formattedTime=localTime.format(timeformatter);
-//		String formattedDate=localDate.format(dateformatter);
-//		verifyFileExists(home+"\\Downloads\\tap_export_all_"+formattedDate+"_"+formattedTime+".csv");
-//		return this;		
-//	}
+	public StoreReportsVendorsPage verifyDownloadVendorReport(){
+	    	String home = System.getProperty("user.home");
+	    	ZoneId zoneId = ZoneId.of("US/Pacific");
+		LocalTime localTime=LocalTime.now(zoneId);
+		LocalDate localDate=LocalDate.now(zoneId);
+		DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("HHmm");
+		DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+		String formattedTime=localTime.format(timeformatter);
+		String formattedDate=localDate.format(dateformatter);
+		verifyFileExists(home+"\\Downloads\\","tap_export_vendor_*"+formattedDate+"_"+formattedTime+".csv");
+		return this;		
+	}
 
 	public OpeningPage clickLogOff(){
 	    	String logOff = prop.getProperty("StoreReports.LogOff.LinkText");

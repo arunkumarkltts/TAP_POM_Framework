@@ -8,6 +8,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
@@ -742,6 +744,23 @@ public class GenericWrappers extends Reporter implements Wrappers {
 			reportStep("The file "+fileName+" is available", "PASS");
 		} catch (Exception e) {
 			reportStep("The file "+fileName+" is not available", "FAIL");
+		}
+	}
+
+	/**
+	 * This method will verify if given file exists or not;
+	 * @param fileName The fileName with absolute path
+	 * @author Arunkumar K
+	 */
+	public void verifyFileExists(String directoryPath, String fName) {
+		try{
+		    	File directory = new File(directoryPath);
+		    	FileFilter fileFilter = new WildcardFileFilter(fName);
+		    	File[] fileList = directory.listFiles(fileFilter);
+		    	String fileName = fileList[0].getName();
+			reportStep("The file "+fileName+" is available", "PASS");
+		} catch (Exception e) {
+			reportStep("The file which contains "+fName+" is not available", "FAIL");
 		}
 	}
 
