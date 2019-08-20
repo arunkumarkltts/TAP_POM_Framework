@@ -32,16 +32,6 @@ public class TapWrappers extends GenericWrappers implements Wrappers{
 		invokeApp(browserName);
 	}
 
-	@AfterSuite
-	public void afterSuite(){
-		endResult();
-	}
-
-	@AfterTest
-	public void afterTest(){
-		unloadObjects();
-	}
-	
 	@AfterMethod
 	public void afterMethod(ITestResult result){
 		endTestcase();
@@ -50,6 +40,16 @@ public class TapWrappers extends GenericWrappers implements Wrappers{
 	
 	@AfterClass
 	public void afterClass(){
+	}
+
+	@AfterTest
+	public void afterTest(){
+		unloadObjects();
+	}
+
+	@AfterSuite
+	public void afterSuite(){
+		endResult();
 	}
 	
 	@DataProvider(name="fetchData")

@@ -70,7 +70,13 @@ public class MiscellaneousListEditInputPage extends TapWrappers{
 	}
 
 	public MiscellaneousListEditInputPage enterInputName(String data){
-	    	String iconName = prop.getProperty("MiscellaneousListEditInput.InputName.Name");
+	    	String inputName = prop.getProperty("MiscellaneousListEditInput.InputName.Name");
+		enterByName(inputName, data);
+		return this;		
+	}
+
+	public MiscellaneousListEditInputPage enterIconName(String data){
+	    	String iconName = prop.getProperty("MiscellaneousListEditInput.IconName.Name");
 		enterByName(iconName, data);
 		return this;		
 	}

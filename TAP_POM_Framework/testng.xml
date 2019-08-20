@@ -2,15 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" verbose="5">
   <test name="Test">
-	<groups>		
+<!-- 	<groups>		
 	 <run>		
-	  <!-- <include name="Registration" />		 -->
+	  <include name="Registration"/>		
 	 </run>		
-	</groups>
+	</groups> -->
 	<classes>
-	  <!-- <class name="testCases.TC0001_CheckNewRegister"/> -->
+	  <class name="testCases.TC0001_CheckNewRegister"/>
 	  <class name="testCases.TC0002_AddNewAirline"/>
-	  <!-- <class name="testCases.TC0003_CheckEmail"/>
+<!-- 	  <class name="testCases.TC0003_CheckEmail"/>
 	  <class name="testCases.TC0004_ReenterEmailCheck"/>
 	  <class name="testCases.TC0005_CheckPassword"/> -->
 	</classes>

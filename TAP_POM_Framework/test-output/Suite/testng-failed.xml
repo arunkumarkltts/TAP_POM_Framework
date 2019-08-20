@@ -5,6 +5,7 @@
     <classes>
       <class name="testCases.TC0002_AddNewAirline">
         <methods>
+          <include name="addNewAirline" invocation-numbers="0"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
@@ -12,7 +13,6 @@
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
-          <include name="loginLogOut" invocation-numbers="0"/>
           <include name="setValues"/>
         </methods>
       </class> <!-- testCases.TC0002_AddNewAirline -->

@@ -11,7 +11,6 @@ import wrappers.TapWrappers;
 @Listeners({TestListener.class})
 public class TC0001_CheckNewRegister extends TapWrappers {
 
-
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
@@ -22,7 +21,7 @@ public class TC0001_CheckNewRegister extends TapWrappers {
 		authors = "Abirami S";		
 	}
 	
-	@Test(dataProvider = "fetchData", groups = {"Registration"})
+	@Test(dataProvider = "fetchData", groups = { "Registration" })
 	public void CheckNewRegister(String airline, String developer){
 		new OpeningPage(driver, test)
 		.clickRegister()

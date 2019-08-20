@@ -3,19 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="utils.Temp">
+      <class name="testCases.TC0047_CreateProgAircraft">
         <methods>
-          <include name="FileChecker"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
+          <include name="CreateProgAircraft" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
-          <include name="beforeMethod"/>
           <include name="setValues"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- utils.Temp -->
+      </class> <!-- testCases.TC0047_CreateProgAircraft -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

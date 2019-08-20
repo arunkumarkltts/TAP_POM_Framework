@@ -57,11 +57,29 @@ public class MediaManagerOrderSummaryPage extends TapWrappers{
 		return this;		
 	}
 	
+	public MediaManagerOrderSummaryPage clickNextStepButton(){
+	    	String nextStepButton = prop.getProperty("MediaManagerOrderSummary.NextButton.Xpath");
+		clickByXpath(nextStepButton);
+		return this;		
+	}
+	
+	public MediaManagerOrderSummaryPage verifyStatus(String expectedStatus){
+	    	String statusDropDown = prop.getProperty("MediaManagerOrderSummary.StatusDropDown.Xpath");
+		String actualStatus = getSelectedDropDownText(statusDropDown);
+		verifyIfEqual(actualStatus, expectedStatus);
+		return this;		
+	}
+
+	public NewApplicationPage clickDownloadFiles(String appName){
+		clickByXpath("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@id='links']/a");
+		return new NewApplicationPage(driver, test, appName);		
+	}
+
 	public MediaManagerOrderSummaryPage clickRemoveAppFromOrder(String appName){
 		clickByXpathNoSnap("//a[contains(text(),'"+appName+"')]/parent::div/following-sibling::div[@id='edit-bar']/a[@id='remove']");
 		return this;		
 	}
-	
+
 	public MediaManagerOrderSummaryPage clickOkButton(){
 		acceptAlert();
 		return this;		

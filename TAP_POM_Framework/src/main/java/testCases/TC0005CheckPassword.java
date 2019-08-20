@@ -1,11 +1,15 @@
 package testCases;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pages.OpeningPage;
+import utils.TestListener;
 import wrappers.TapWrappers;
 import org.openqa.selenium.Keys;
+
+@Listeners({TestListener.class})
 public class TC0005CheckPassword extends TapWrappers {
 	
 	@BeforeClass

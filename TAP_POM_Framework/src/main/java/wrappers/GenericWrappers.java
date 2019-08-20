@@ -36,6 +36,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -48,9 +49,8 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	protected static Properties prop;
 	public String sUrl,primaryWindowHandle,sHubUrl,sHubPort;
 	public WebDriverWait wait;
-//	public Alert alert;
 	LocalDate today = LocalDate.now();
-	
+
 	public GenericWrappers() {
 		Properties prop = new Properties();
 		try {
@@ -69,7 +69,6 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		this.driver = driver;
 		this.test = test;
 		this.wait = new WebDriverWait(driver, 30);
-//		this.alert = wait.until(ExpectedConditions.alertIsPresent());
 	}
 
 	public void loadObjects() {
@@ -115,7 +114,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 
 			DesiredCapabilities dc = new DesiredCapabilities();
 			dc.setBrowserName(browser);
-			dc.setPlatform(Platform.WIN10);
+			dc.setPlatform(Platform.WINDOWS);
 
 			// this is for grid run
 			if(bRemote)
@@ -210,7 +209,8 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	 */
 	public void enterByXpath(String xpathValue, String data) {
 		try {
-		    	driver.findElement(By.xpath(xpathValue)).click();
+		    	this.wait = new WebDriverWait(driver, 30);
+		    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathValue))).click();
 			driver.findElement(By.xpath(xpathValue)).clear();
 			driver.findElement(By.xpath(xpathValue)).sendKeys(data);	
 			reportStep("The data: "+data+" entered successfully in field :"+xpathValue, "PASS");
@@ -537,7 +537,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 
 	public void selectVisibileTextByXPath(String xpath, String value) {
 		try{
-			new Select(driver.findElement(By.xpath(xpath))).selectByVisibleText(value);;
+			new Select(driver.findElement(By.xpath(xpath))).selectByVisibleText(value);
 			reportStep("The element with xpath: "+xpath+" is selected with value :"+value, "PASS");
 		} catch (Exception e) {
 			reportStep("The value: "+value+" could not be selected.", "FAIL");
@@ -546,11 +546,22 @@ public class GenericWrappers extends Reporter implements Wrappers {
 
 	public void selectIndexById(String id, String value) {
 		try{
-			new Select(driver.findElement(By.id(id))).selectByIndex(Integer.parseInt(value));;
+			new Select(driver.findElement(By.id(id))).selectByIndex(Integer.parseInt(value));
 			reportStep("The element with id: "+id+" is selected with index :"+value, "PASS");
 		} catch (Exception e) {
 			reportStep("The index: "+value+" could not be selected.", "FAIL");
 		}
+	}
+
+	public String getSelectedDropDownText(String xpath) {
+	    	String text = null;
+		try{
+			text = new Select(driver.findElement(By.xpath(xpath))).getFirstSelectedOption().getText();
+			reportStep("The current selected text of the element with xpath: "+xpath+" is: "+text, "PASS");
+		} catch (Exception e) {
+			reportStep("The current selected text of the element with xpath: "+xpath+" could not be retrieved ", "FAIL");
+		}
+		return text;
 	}
 
 	public void switchToParentWindow() {
@@ -578,6 +589,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 
 	public void acceptAlert() {
 		try {
+		    	wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
 		} catch (NoAlertPresentException e) {
 			reportStep("The alert could not be found.", "FAIL");

@@ -89,7 +89,7 @@ public class MediaManagerAllApplicationsPage extends TapWrappers{
 		return new MediaManagerDashboardMyAccountPage(driver, test);		
 	}
 
-	public MediaManagerAllApplicationsPage clickAppAddButton(String appName){
+	public MediaManagerAllApplicationsPage clickAppAddRemoveButton(String appName){
 		clickByXpath("//span[contains(text(),'"+appName+"')]/parent::div/following-sibling::div/a/span");
 		return this;
 	}

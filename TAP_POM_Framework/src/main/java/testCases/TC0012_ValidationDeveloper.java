@@ -12,7 +12,7 @@ import wrappers.TapWrappers;
 @Listeners({TestListener.class})
 public class TC0012_ValidationDeveloper extends TapWrappers {
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setValues(){
 		browserName = "chrome";
 		dataSheetName = "TC0012";

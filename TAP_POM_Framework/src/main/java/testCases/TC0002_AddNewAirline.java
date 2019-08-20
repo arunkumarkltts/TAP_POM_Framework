@@ -13,16 +13,16 @@ public class TC0002_AddNewAirline extends TapWrappers {
 	
 	@BeforeClass
 	public void setValues(){
-		browserName = "chrome";
+		browserName = "firefox";
 		dataSheetName = "TC0002";
-		testCaseName = "Registration";
+		testCaseName = "Add New Airline";
 		testDescription = "Check whether able to Reigster New Airline";
 		category = "smoke";
 		authors = "Abirami S";		
 	} 
 
-	@Test(dataProvider = "fetchData", groups = {"Registration"})
-	public void loginLogOut(String cName, String cPhone, String cWeb, String firstName, String lastName, 
+	@Test(dataProvider = "fetchData", groups = { "Registration" })
+	public void addNewAirline(String cName, String cPhone, String cWeb, String firstName, String lastName, 
 		String email, String password){
 		new OpeningPage(driver, test)
 		.clickRegister()
@@ -37,6 +37,7 @@ public class TC0002_AddNewAirline extends TapWrappers {
 		.enterPassword(password)
 		.reEnterPassword(password)
 		.clickSubmitRegistrationForm()
+		.clickOk()
 		.verifySubmit()
 		.clickBackToHomePage();
 	}

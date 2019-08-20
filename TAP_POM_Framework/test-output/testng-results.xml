@@ -2,55 +2,120 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="44557" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:58Z">
+  <suite name="Default suite" duration-ms="22197" started-at="2019-08-20T10:23:43Z" finished-at="2019-08-20T10:24:06Z">
     <groups>
+      <group name="Registration">
+        <method signature="TC0047_CreateProgAircraft.CreateProgAircraft(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="CreateProgAircraft" class="testCases.TC0047_CreateProgAircraft"/>
+      </group> <!-- Registration -->
     </groups>
-    <test name="Default test" duration-ms="44557" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:58Z">
-      <class name="utils.Temp">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:utils.Temp@71d15f18]" name="beforeSuite" is-config="true" duration-ms="307" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:13Z">
+    <test name="Default test" duration-ms="22197" started-at="2019-08-20T10:23:43Z" finished-at="2019-08-20T10:24:06Z">
+      <class name="testCases.TC0047_CreateProgAircraft">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="beforeSuite" is-config="true" duration-ms="285" started-at="2019-08-20T10:23:43Z" finished-at="2019-08-20T10:23:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:utils.Temp@71d15f18]" name="beforeTest" is-config="true" duration-ms="5" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:13Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="beforeTest" is-config="true" duration-ms="4" started-at="2019-08-20T10:23:43Z" finished-at="2019-08-20T10:23:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="setValues()[pri:0, instance:utils.Temp@71d15f18]" name="setValues" is-config="true" duration-ms="0" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:13Z">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="setValues" is-config="true" duration-ms="1" started-at="2019-08-20T10:23:43Z" finished-at="2019-08-20T10:23:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setValues -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:utils.Temp@71d15f18]" name="beforeMethod" is-config="true" duration-ms="42841" started-at="2019-08-09T04:52:13Z" finished-at="2019-08-09T04:52:56Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="beforeMethod" is-config="true" duration-ms="6444" started-at="2019-08-20T10:23:44Z" finished-at="2019-08-20T10:23:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="FileChecker()[pri:0, instance:utils.Temp@71d15f18]" name="FileChecker" duration-ms="856" started-at="2019-08-09T04:52:56Z" finished-at="2019-08-09T04:52:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FileChecker -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:utils.Temp@71d15f18]" name="afterMethod" is-config="true" duration-ms="793" started-at="2019-08-09T04:52:57Z" finished-at="2019-08-09T04:52:58Z">
+        <test-method status="PASS" signature="CreateProgAircraft(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="CreateProgAircraft" duration-ms="14703" started-at="2019-08-20T10:23:50Z" data-provider="fetchData" finished-at="2019-08-20T10:24:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=FileChecker status=SUCCESS method=Temp.FileChecker()[pri:0, instance:utils.Temp@71d15f18] output={null}]]]>
+                <![CDATA[sys_admin@ltts.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Rajravi@1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[New]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[abi123]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[312-R1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Inactive]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Avant]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[abi456]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[thales]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Inactive]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[moto(0);]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateProgAircraft -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="afterMethod" is-config="true" duration-ms="688" started-at="2019-08-20T10:24:05Z" finished-at="2019-08-20T10:24:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CreateProgAircraft status=SUCCESS method=TC0047_CreateProgAircraft.CreateProgAircraft(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:utils.Temp@71d15f18]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-09T04:52:58Z" finished-at="2019-08-09T04:52:58Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-20T10:24:06Z" finished-at="2019-08-20T10:24:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:utils.Temp@71d15f18]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-08-09T04:52:58Z" finished-at="2019-08-09T04:52:58Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-08-20T10:24:06Z" finished-at="2019-08-20T10:24:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:utils.Temp@71d15f18]" name="afterSuite" is-config="true" duration-ms="298" started-at="2019-08-09T04:52:58Z" finished-at="2019-08-09T04:52:58Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TC0047_CreateProgAircraft@2bea5ab4]" name="afterSuite" is-config="true" duration-ms="192" started-at="2019-08-20T10:24:06Z" finished-at="2019-08-20T10:24:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- utils.Temp -->
+      </class> <!-- testCases.TC0047_CreateProgAircraft -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

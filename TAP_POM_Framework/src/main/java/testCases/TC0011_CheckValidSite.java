@@ -8,7 +8,7 @@ import wrappers.TapWrappers;
 import org.openqa.selenium.Keys;
 public class TC0011_CheckValidSite extends TapWrappers {
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setValues(){
 		browserName = "chrome";
 		dataSheetName = "TC0011";
@@ -18,7 +18,7 @@ public class TC0011_CheckValidSite extends TapWrappers {
 		authors = "Abirami S";		
 	}
 	
-	@Test(dataProvider = "fetchData")
+	@Test(dataProvider = "fetchData", groups = { "Registration" })
 	public void loginLogOut(String fName, String lName, String company, String cWeb, String cPhone, String socialSite){
 		new OpeningPage(driver, test)
 		.clickRegister()

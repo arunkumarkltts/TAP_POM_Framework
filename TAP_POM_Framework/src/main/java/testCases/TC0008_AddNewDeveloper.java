@@ -11,7 +11,7 @@ import wrappers.TapWrappers;
 @Listeners({TestListener.class})
 public class TC0008_AddNewDeveloper extends TapWrappers {
 	
-    	@BeforeClass
+    @BeforeClass(alwaysRun = true)
 	public void setValues(){
 		browserName = "chrome";
 		dataSheetName = "TC0008";
@@ -21,7 +21,7 @@ public class TC0008_AddNewDeveloper extends TapWrappers {
 		authors = "Abirami S";		
 	}
 	
-	@Test(dataProvider = "fetchData")
+	@Test(dataProvider = "fetchData", groups = { "Registration" })
 	public void developerRegistration(String firstName, String lastName, String companyDeveloper, 
 		String companyWebsite, String phone, String socialSite, String email, String password){
 		new OpeningPage(driver, test)

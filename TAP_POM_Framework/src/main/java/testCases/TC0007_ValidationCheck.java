@@ -1,4 +1,3 @@
-
 package testCases;
 
 import org.testng.annotations.BeforeClass;
@@ -12,7 +11,7 @@ import wrappers.TapWrappers;
 @Listeners({TestListener.class})
 public class TC0007_ValidationCheck extends TapWrappers {
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setValues(){
 		browserName = "chrome";
 		dataSheetName = "TC0007";
@@ -22,7 +21,7 @@ public class TC0007_ValidationCheck extends TapWrappers {
 		authors = "Abirami S";		
 	}
 	
-	@Test(dataProvider = "fetchData")
+	@Test(dataProvider = "fetchData", groups = { "Registration" })
 	public void loginLogOut(String cName, String cPhone, String cWeb, String firstName, String lastName, String email, String password){
 		new OpeningPage(driver, test)
 		.clickRegister()

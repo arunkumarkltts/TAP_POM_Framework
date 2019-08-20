@@ -110,7 +110,7 @@ public class AirlineRegistrationPage extends TapWrappers{
 
 	public AirlineRegistrationPage clickSubmitRegistrationForm(){
 	    	String submit = prop.getProperty("AirlineRegistration.SubmitButton.Xpath");
-		clickByXpath(submit);
+		clickByXpathNoSnap(submit);
 		return this;
 	}
 
