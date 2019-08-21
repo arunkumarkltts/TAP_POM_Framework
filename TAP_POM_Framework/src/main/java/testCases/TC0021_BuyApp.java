@@ -28,7 +28,7 @@ public class TC0021_BuyApp extends TapWrappers {
                         .clickAirline(row)
                         .clickMyShoppingCart()
                         .clickLinkToAddAppsToThisOrder()
-                        .clickAppAddRemoveButton(appName)
+                        .clickAppAddButton(appName)
                         .clickMyShoppingCart()
                         .selectCopyFrom(copy)
                         .enterRequestedPackageDate(pcDate)

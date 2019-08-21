@@ -34,7 +34,7 @@ public class TC0119_AirlineLogin91 extends TapWrappers {
                     	.clickApply()
                     	.clickEditOrderInfo()
                     	.clickLinkToAddAppsToThisOrder()
-                    	.clickAppAddRemoveButton(appName)
+                    	.clickAppAddButton(appName)
                     	.clickMyShoppingCart()
                         .clickLogOff();
                     	

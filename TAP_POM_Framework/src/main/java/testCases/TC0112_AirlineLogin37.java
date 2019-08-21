@@ -26,7 +26,7 @@ public class TC0112_AirlineLogin37 extends TapWrappers {
                         .enterEmail(uName)
                     	.enterPassword(pwd)
                     	.clickLoginAirlineUser()
-                    	.clickAppAddRemoveButton(appName)
+                    	.clickAppAddButton(appName)
                     	.clickMyShoppingCart()
                     	.selectCopyFrom(copy)
                     	.enterRequestedPackageDate(pcDate)

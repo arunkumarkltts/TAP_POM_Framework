@@ -21,14 +21,14 @@ public class TC0123_AirlineLogin123 extends TapWrappers {
 	}
 	
 	@Test(dataProvider = "fetchData", groups = { "Registration" })
-	public void AirlineLogin123(String uName, String pwd, String appName1, String appName2){
+	public void AirlineLogin123(String uName, String pwd, String appName, String appname){
                         new OpeningPage(driver, test)
                         .clickLogin()
                         .enterEmail(uName)
                     	.enterPassword(pwd)
                     	.clickLoginAirlineUser()
-                    	.clickAppAddRemoveButton(appName1)
-                    	.clickAppAddRemoveButton(appName2)
+                    	.clickAppAddButton(appName)
+                    	.clickAppRemoveButton(appname)
                         .clickLogOff();
                     	
 	}

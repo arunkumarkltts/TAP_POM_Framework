@@ -26,7 +26,7 @@ public class TC0105_AirlineLogin4 extends TapWrappers {
                         .enterEmail(uName)
                     	.enterPassword(pwd)
                     	.clickLoginAirlineUser()
-                    	.clickAppAddRemoveButton(appName)
+                    	.clickAppAddButton(appName)
                     	.clickMyShoppingCart()
                         .clickLogOff();
                     	
