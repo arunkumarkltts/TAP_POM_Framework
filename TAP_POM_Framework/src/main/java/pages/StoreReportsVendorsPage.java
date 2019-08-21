@@ -17,7 +17,7 @@ public class StoreReportsVendorsPage extends TapWrappers{
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("StoreReportsVendors.PageVerification.Xpath");
-		verifyTextContainsByXpath(pageVerification, "Airline Report");
+		verifyTextContainsByXpath(pageVerification, "Vendor Report");
 	}
 
 	public StoreReportsVendorsPage verifyAirlineReportCount(int count){
