@@ -12,7 +12,7 @@ public class TC0126_AirlineLogin131 extends TapWrappers {
 	
 	@BeforeClass(alwaysRun = true)
 	public void setValues(){
-		browserName = "chrome";
+//		browserName = "chrome";
 		dataSheetName = "TC0126";
 		testCaseName = "Edit New Program";
 		testDescription = "Edit New Program and Aircraft in Airline Login";
@@ -20,7 +20,7 @@ public class TC0126_AirlineLogin131 extends TapWrappers {
 		authors = "Abirami S";
 	}
 	
-	@Test(dataProvider = "fetchData", groups = { "Registration" })
+	@Test(dataProvider = "fetchData", groups = { "airline1" })
 	public void AirlineLogin123(String uName, String pwd, String prog){
                         new OpeningPage(driver, test)
                         .clickLogin()
@@ -29,10 +29,8 @@ public class TC0126_AirlineLogin131 extends TapWrappers {
                     	.clickLoginAirlineUser()
                     	.clickMyShoppingCart()
                     	.selectProgram(prog)
-                    	.clickAircraftNew()
                     	.clickViewAllProgramsButton()
                     	.clickViewAllAircraft()
-                    	//.clickEditProgram()
                         .clickLogOff();
                     	
 	}

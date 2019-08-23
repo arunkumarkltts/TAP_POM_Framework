@@ -27,7 +27,7 @@ public class TC0124_AirlineAddNewOrder extends TapWrappers {
                         .enterEmail(uName)
                     	.enterPassword(pwd)
                     	.clickLoginAirlineUser()
-                    	.clickAppAddButton(appName)
+                    	.clickAppAddRemoveButton(appName)
                     	.clickMyShoppingCart()
                     	.selectCopyFrom(copy)
                     	.enterRequestedPackageDate(pcDate)

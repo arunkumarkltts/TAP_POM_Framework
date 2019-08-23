@@ -30,10 +30,7 @@ public class TC0026_UpdateAutoNotification extends TapWrappers {
                         	.clickMyAccount()
                         	.clickSubmittedCheckbox()
                         	.clickUpdateButton()
+                        	.clickOk()
                         	.clickLogOff();
-                        	
-                        	
-                        	
-                        	
     	}
 }

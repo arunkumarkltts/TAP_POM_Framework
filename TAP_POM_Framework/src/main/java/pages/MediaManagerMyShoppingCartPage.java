@@ -117,8 +117,7 @@ public class MediaManagerMyShoppingCartPage extends TapWrappers{
 	}
 
 	public MediaManagerMyShoppingCartPage clickOkButton(){
-	    	String okButton = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.StatusOkButton.Xpath");
-		clickByXpath(okButton);
+	    	acceptAlert();
 		return this;		
 	}
 

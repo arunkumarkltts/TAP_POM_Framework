@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" verbose="5">
-  <test name="Test">
-<!-- 	<groups>		
+<suite name="Suite" verbose="10">
+  <test name="Test1">
+	<groups>		
 	 <run>		
-	  <include name="Registration"/>		
+	  <include name="airline1"/>		
 	 </run>		
-	</groups> -->
-	<classes>
+	</groups>
+	<packages>
+		<package name="testCases"/>
+	</packages>
+<!-- 	<classes>
 	  <class name="testCases.TC0001_CheckNewRegister"/>
 	  <class name="testCases.TC0002_AddNewAirline"/>
-<!-- 	  <class name="testCases.TC0003_CheckEmail"/>
+	  <class name="testCases.TC0003_CheckEmail"/>
 	  <class name="testCases.TC0004_ReenterEmailCheck"/>
-	  <class name="testCases.TC0005_CheckPassword"/> -->
-	</classes>
+	  <class name="testCases.TC0005_CheckPassword"/>
+	</classes> -->
   </test> <!-- Test -->
 </suite> <!-- Suite -->

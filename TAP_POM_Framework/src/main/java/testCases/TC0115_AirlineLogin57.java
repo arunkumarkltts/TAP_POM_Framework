@@ -1,4 +1,5 @@
 package testCases;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -6,12 +7,13 @@ import org.testng.annotations.Test;
 import pages.OpeningPage;
 import utils.TestListener;
 import wrappers.TapWrappers;
+
 @Listeners({TestListener.class})
 public class TC0115_AirlineLogin57 extends TapWrappers {
 	
 	@BeforeClass(alwaysRun = true)
 	public void setValues(){
-		browserName = "chrome";
+//		browserName = "chrome";
 		dataSheetName = "TC0115";
 		testCaseName = "AirlineLogin57";
 		testDescription = "Add new program and aircraft";
@@ -19,7 +21,7 @@ public class TC0115_AirlineLogin57 extends TapWrappers {
 		authors = "Abirami S";
 	}
 	
-	@Test(dataProvider = "fetchData", groups = { "Registration" })
+	@Test(dataProvider = "fetchData", groups = { "airline" })
 	public void AirlineLogin57(String uName, String pwd,
 			String program, String progName, String progid, String active, String system,
 			String tailNum, String aircraftType, String AirActive, String airlineProg){
@@ -30,13 +32,13 @@ public class TC0115_AirlineLogin57 extends TapWrappers {
                     	.clickLoginAirlineUser()
                     	.clickMyShoppingCart()
                     	.selectProgram(program)
-                    	.clickAircraftNew()
                     	.enterProgramName(progName)
                     	.enterProgramID(progid)
                     	.selectProgramActive(active)
                     	.selectSystem(system)
                     	.clickSaveProgram()
                     	.clickOkButton()
+                    	.clickAircraftNew()
                     	.enterAircraftTailNumber(tailNum)
                     	.enterAircraftType(aircraftType)
                     	.selectAircraftActive(AirActive)
@@ -44,7 +46,6 @@ public class TC0115_AirlineLogin57 extends TapWrappers {
                     	.clickSaveAircraft()
                     	.clickOkButton()
                         .clickLogOff();
-                    	
 	}
 
 }

@@ -47,7 +47,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	
 	public RemoteWebDriver driver;
 	protected static Properties prop;
-	public String sUrl,primaryWindowHandle,sHubUrl,sHubPort;
+	public String sUrl,primaryWindowHandle,sHubUrl,sHubPort, browserName;
 	public WebDriverWait wait;
 	LocalDate today = LocalDate.now();
 
@@ -58,6 +58,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 			sHubUrl = prop.getProperty("HUB");
 			sHubPort = prop.getProperty("PORT");
 			sUrl = prop.getProperty("URL");
+			browserName = prop.getProperty("BROWSER");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -137,11 +138,11 @@ public class GenericWrappers extends Reporter implements Wrappers {
 			driver.get(sUrl);
 
 			primaryWindowHandle = driver.getWindowHandle();		
-			reportStep("The browser:" + browser + " launched successfully", "PASS");
+//			reportStep("The browser:" + browser + " launched successfully", "PASS");
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			reportStep("The browser:" + browser + " could not be launched", "FAIL");
+//			reportStep("The browser:" + browser + " could not be launched", "FAIL");
 		}
 		
 		return driver;
@@ -446,7 +447,9 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	 */
 	public void clickByXpath(String xpathVal) {
 		try{
-			driver.findElement(By.xpath(xpathVal)).click();
+		    	this.wait = new WebDriverWait(driver, 30);
+		    	wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathVal))).click();
+//			driver.findElement(By.xpath(xpathVal)).click();
 			reportStep("The element : "+xpathVal+" is clicked.", "PASS");
 		} catch (Exception e) {
 			reportStep("The element with xpath: "+xpathVal+" could not be clicked.", "FAIL");
@@ -589,6 +592,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 
 	public void acceptAlert() {
 		try {
+		    	this.wait = new WebDriverWait(driver, 30);
 		    	wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
 		} catch (NoAlertPresentException e) {

@@ -12,9 +12,9 @@ import org.openqa.selenium.Keys;
 @Listeners({TestListener.class})
 public class TC0003_CheckEmail extends TapWrappers {
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setValues(){
-		browserName = "chrome";
+//		browserName = "chrome";
 		dataSheetName = "TC0003";
 		testCaseName = "Email Check";
 		testDescription = "Check whether personal email address or company email address";
@@ -22,7 +22,7 @@ public class TC0003_CheckEmail extends TapWrappers {
 		authors = "Abirami S";		
 	}
 	
-	@Test(dataProvider = "fetchData")
+	@Test(dataProvider = "fetchData", groups = { "Email" })
 	public void loginLogOut(String cName, String cPhone, String cWeb, String firstName, String lastName, String email){
 		new OpeningPage(driver, test)
 		.clickRegister()

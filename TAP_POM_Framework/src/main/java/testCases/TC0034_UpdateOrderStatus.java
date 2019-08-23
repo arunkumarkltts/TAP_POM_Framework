@@ -21,17 +21,18 @@ public class TC0034_UpdateOrderStatus extends TapWrappers {
 	}
 	
 	@Test(dataProvider = "fetchData", groups = { "Registration" })
-	public void AddNewApplication(String uName, String pwd, String row, String status){
+	public void AddNewApplication(String uName, String pwd, String row, String Orderrow,  String status){
                         new OpeningPage(driver, test)
                         .clickLogin()
                         .enterEmail(uName)
                     	.enterPassword(pwd)
                     	.clickLoginAppAdminUser()
                         .clickMediaManager()
-                        .clickAirline("1")
-                        .clickOrderName("277")
+                        .clickAirline(row)
+                        .clickOrderName(Orderrow)
                         .selectStatus(status)
                         .clickApply()
+                        .clickNextStepButton()
                         .clickLogOff();
 	}
 

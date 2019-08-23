@@ -11,9 +11,9 @@ import wrappers.TapWrappers;
 @Listeners({TestListener.class})
 public class TC0002_AddNewAirline extends TapWrappers {
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setValues(){
-		browserName = "firefox";
+//		browserName = "firefox";
 		dataSheetName = "TC0002";
 		testCaseName = "Add New Airline";
 		testDescription = "Check whether able to Reigster New Airline";
@@ -21,7 +21,7 @@ public class TC0002_AddNewAirline extends TapWrappers {
 		authors = "Abirami S";		
 	} 
 
-	@Test(dataProvider = "fetchData", groups = { "Registration" })
+	@Test(dataProvider = "fetchData"/*, groups = { "Registration1" }*/)
 	public void addNewAirline(String cName, String cPhone, String cWeb, String firstName, String lastName, 
 		String email, String password){
 		new OpeningPage(driver, test)

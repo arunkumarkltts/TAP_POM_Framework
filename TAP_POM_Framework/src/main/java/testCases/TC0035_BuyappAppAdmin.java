@@ -21,7 +21,8 @@ public class TC0035_BuyappAppAdmin extends TapWrappers {
 	}
 	
 	@Test(dataProvider = "fetchData", groups = { "Registration" })
-	public void AddNewApplication(String uName, String pwd, String row, String appName, String copy, String pcDate, String startDate){
+	public void AddNewApplication(String uName, String pwd, String row, String appName, String copy,
+			String orderName, String pcDate, String startDate){
                         new OpeningPage(driver, test)
                         .clickLogin()
                         .enterEmail(uName)
@@ -31,10 +32,10 @@ public class TC0035_BuyappAppAdmin extends TapWrappers {
                         .clickAirline(row)
                         .clickMyShoppingCart()
                         .clickLinkToAddAppsToThisOrder()
-                        .clickAppAddButton(appName)
+                        .clickAppAddRemoveButton(appName)
                         .clickMyShoppingCart()
-                        //.enterOrderName(oName)
                         .selectCopyFrom(copy)
+                        .enterOrderName(orderName)
                         .enterRequestedPackageDate(pcDate)
                         .enterOrderStartDate(startDate)
                         .clickSubmitOrder()

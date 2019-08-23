@@ -36,7 +36,7 @@ public class TC0039_CancelCompanyRegistration extends TapWrappers {
 		.enterPassword(password)
 		.reEnterPassword(password)
 		.clickSubmitRegistrationForm()
-		.verifySubmit()
+		//.verifySubmit()
 		.clickCancel()
 		.clickBackToHomePage();
 		

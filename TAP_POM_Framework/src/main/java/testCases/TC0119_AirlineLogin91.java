@@ -13,7 +13,7 @@ public class TC0119_AirlineLogin91 extends TapWrappers {
 	@BeforeClass(alwaysRun = true)
 	public void setValues(){
 		browserName = "chrome";
-		dataSheetName = "TC00119";
+		dataSheetName = "TC0119";
 		testCaseName = "Edit Order Info";
 		testDescription = "To Click Browse and Add Apps in Edit Order Info Page";
 		category = "smoke";
@@ -34,7 +34,7 @@ public class TC0119_AirlineLogin91 extends TapWrappers {
                     	.clickApply()
                     	.clickEditOrderInfo()
                     	.clickLinkToAddAppsToThisOrder()
-                    	.clickAppAddButton(appName)
+                    	.clickAppAddRemoveButton(appName)
                     	.clickMyShoppingCart()
                         .clickLogOff();
                     	

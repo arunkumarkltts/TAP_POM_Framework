@@ -27,8 +27,8 @@ public class TC0030_ViewActiveInactiveUser extends TapWrappers {
                         .enterEmail(uName)
                     	.enterPassword(pwd)
                     	.clickLoginAppAdminUser()
-                    	.clickUsers();
-                    	
+                    	.clickUsers()
+                    	.clickLogOff();
 	}
 
 }

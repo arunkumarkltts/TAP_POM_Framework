@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import com.relevantcodes.extentreports.ExtentTest;
 
 import wrappers.TapWrappers;
@@ -68,6 +67,11 @@ public class MediaManagerDashboardMyShoppingCartPage extends TapWrappers{
 	public MediaManagerDashboardMyShoppingCartPage selectProgram(String programData){
 	    	String program = prop.getProperty("MediaManagerAirlineOrdersShoppingCart.ProgramDropDown.Xpath");
 		selectVisibileTextByXPath(program, programData);
+		try {
+		    Thread.sleep(3000);
+		} catch (InterruptedException e) {
+		    e.printStackTrace();
+		}
 		return this;		
 	}
 

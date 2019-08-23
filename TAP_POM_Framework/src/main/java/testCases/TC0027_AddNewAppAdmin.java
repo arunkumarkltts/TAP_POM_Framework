@@ -54,7 +54,7 @@ public class TC0027_AddNewAppAdmin extends TapWrappers {
                     	.enterApkSize(apkSize)
                     	.enterObbSize(obbSize)
                     	.enterAddVideoLinks(addVideo)
-                        .clickAndroidVersion1_6()
+                        .clickAndroidVersion4_4()
                     	.clickAccelerometer()
                     	.clickInternetUsageYes()
                     	.clickAddNewApplicationButton(cTitle);

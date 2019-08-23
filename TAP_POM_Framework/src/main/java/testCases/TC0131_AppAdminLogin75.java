@@ -29,7 +29,7 @@ public class TC0131_AppAdminLogin75 extends TapWrappers {
                     	.clickLoginAppAdminUser()
                         .clickMediaManager()
                         .clickAirlineDashboard(row)
-                        .clickAppRemoveButton(appName)
+                        .clickAppAddRemoveButton(appName)
                         .clickLogOff();
 	}
 

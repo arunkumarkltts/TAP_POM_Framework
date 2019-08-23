@@ -32,8 +32,8 @@ public class DataInputProvider{
 			// get the number of columns
 			int columnCount = sheet.getRow(0).getLastCellNum();
 			data = new String[rowCount][columnCount];
-			System.out.println("Rowcount = "+rowCount+"\n");
-			System.out.println("Columncount = "+columnCount+"\n");
+//			System.out.println("Rowcount = "+rowCount+"\n");
+//			System.out.println("Columncount = "+columnCount+"\n");
 
 			// loop through the rows
 			for(int i=1; i <=rowCount; i++){

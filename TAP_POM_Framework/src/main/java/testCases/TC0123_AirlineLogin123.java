@@ -27,8 +27,8 @@ public class TC0123_AirlineLogin123 extends TapWrappers {
                         .enterEmail(uName)
                     	.enterPassword(pwd)
                     	.clickLoginAirlineUser()
-                    	.clickAppAddButton(appName)
-                    	.clickAppRemoveButton(appname)
+                    	//.clickAppAddButton(appName)
+                    	.clickAppAddRemoveButton(appname)
                         .clickLogOff();
                     	
 	}

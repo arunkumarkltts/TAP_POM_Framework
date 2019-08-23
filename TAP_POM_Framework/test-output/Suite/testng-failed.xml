@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="5" name="Failed suite [Suite]">
-  <test thread-count="5" verbose="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Suite]">
+  <test thread-count="5" verbose="10" name="Test1(failed)">
+    <groups>
+      <run>
+        <include name="airline1"/>
+      </run>
+    </groups>
     <classes>
-      <class name="testCases.TC0002_AddNewAirline">
+      <class name="testCases.TC0126_AirlineLogin131">
         <methods>
-          <include name="addNewAirline" invocation-numbers="0"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
-          <include name="afterClass"/>
+          <include name="setValues"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
-          <include name="setValues"/>
+          <include name="AirlineLogin123" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testCases.TC0002_AddNewAirline -->
+      </class> <!-- testCases.TC0126_AirlineLogin131 -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

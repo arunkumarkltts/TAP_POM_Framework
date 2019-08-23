@@ -14,17 +14,17 @@ import utils.DataInputProvider;
 
 public class TapWrappers extends GenericWrappers implements Wrappers{
 	
-	@BeforeSuite
+	@BeforeSuite(alwaysRun = true)
 	public void beforeSuite(){
 		startResult();
 	}
 
-	@BeforeTest
+	@BeforeTest(alwaysRun = true)
 	public void beforeTest(){
 		loadObjects();
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void beforeMethod(){
 		test = startTestCase(testCaseName, testDescription);
 		test.assignCategory(category);
@@ -32,22 +32,22 @@ public class TapWrappers extends GenericWrappers implements Wrappers{
 		invokeApp(browserName);
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void afterMethod(ITestResult result){
-		endTestcase();
-		quitBrowser();
+	    	quitBrowser();
+	    	endTestcase();
 	}
 	
 	@AfterClass
 	public void afterClass(){
 	}
 
-	@AfterTest
+	@AfterTest(alwaysRun = true)
 	public void afterTest(){
 		unloadObjects();
 	}
 
-	@AfterSuite
+	@AfterSuite(alwaysRun = true)
 	public void afterSuite(){
 		endResult();
 	}

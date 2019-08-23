@@ -12,7 +12,7 @@ public class UsersPage extends TapWrappers{
 		this.driver = driver;
 		this.test = test;
 	    	String pageVerification = prop.getProperty("Users.PageVerification.Xpath");
-		verifyTextContainsByXpath(pageVerification, " Users");
+		verifyTextContainsByXpath(pageVerification, "Users");
 
 	}
 

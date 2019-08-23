@@ -13,7 +13,7 @@ public class TC0118_AirlineLogin88 extends TapWrappers {
 	@BeforeClass(alwaysRun = true)
 	public void setValues(){
 		browserName = "chrome";
-		dataSheetName = "TC00118";
+		dataSheetName = "TC0118";
 		testCaseName = "Edit Order Info";
 		testDescription = "To delete selected apps in Edit Order Info Page";
 		category = "smoke";
